@@ -98,3 +98,5 @@ flask_profiler.sql
 *.log
 
 _Infa/
+data/
+
