@@ -12,7 +12,7 @@ def images_downloader(
     old_site_name="img.auctiva.com",
 ):
     pattern = re.compile(
-        "(?:http[s]?://)?(?:w{3}\.)?img.auctiva.com\S+(?:jpe?g|gif|png)"
+        "(?:http[s]?://)?(?:w{3}\.)?img.auctiva.com\S+(?:jpe?g|gif|png|bmp|svg)"
     )
 
     def _slash_trip(s: str):
@@ -26,9 +26,9 @@ def images_downloader(
         except OSError:
             print("Create directory %s failed" % os.path.abspath(folder))
 
-    def _download_url_create_goal_files():
+    def _download_url_create_goal_files(file_name):
         source_file = open(os.path.join(source_folder, file_name), "r")
-        goal_file = open(os.path.join(goal_folder, "output.html"), "w")
+        goal_file = open(os.path.join(goal_folder, file_name), "w")
         # temp_file = open(os.path.join(goal_folder, "temp.txt"), "a")
         content_source = source_file.read()
         content_goal = content_source
@@ -41,7 +41,7 @@ def images_downloader(
                 + content_goal[match.start() : match.end()].replace(
                     old_site_name, newsite_name
                 )
-                + content_goal[match.end() + 1 :]
+                + content_goal[match.end() :]
             )
             download_folder = os.path.abspath(
                 image_folder + "/" + os.path.dirname(urlparse(match.group(0)).path)
@@ -68,7 +68,7 @@ def images_downloader(
 
     _create_folder(goal_folder)
     _create_folder(image_folder)
-    _download_url_create_goal_files()
+    _download_url_create_goal_files(file_name)
 
 
 images_downloader(
