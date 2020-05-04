@@ -15,10 +15,6 @@ def images_downloader(
     if list_ext is None:
         list_ext = ["jpg", "jpeg", "gif", "png", "bmp", "svg"]
 
-    # Truncate leading slashes before a folder name
-    def _slash_truncate(s: str):
-        return s.lstrip("/").lstrip("//")
-
     # Create missing downloaded images and goal folders
     def _create_folder(folder):
         access_rights = 0o755
@@ -83,10 +79,6 @@ def images_downloader(
         source_file.close()
         goal_file.close()
 
-    # Truncate leading slashes before a folder name
-    source_folder = _slash_truncate(source_folder)
-    image_folder = _slash_truncate(image_folder)
-    goal_folder = _slash_truncate(goal_folder)
     # Regular expressions to search for URLs
     pattern = _compile_regex(list_ext)
     # Create missing downloaded images and goal folders
@@ -99,9 +91,9 @@ def images_downloader(
 
 
 images_downloader(
-    source_folder="/data/1",
-    goal_folder="/data/2",
-    image_folder="/data/img/",
+    source_folder="data/1/",
+    goal_folder="data/2/",
+    image_folder="data/img",
     old_site_name="img.auctiva.com",
     newsite_name="test.com",
     list_ext=["jpg", "jpeg", "gif", "png", "bmp", "svg"],
