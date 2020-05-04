@@ -10,14 +10,16 @@ def images_downloader(
     image_folder,
     newsite_name,
     old_site_name="img.auctiva.com",
+    list_ext=None,
 ):
-    pattern = re.compile(
-        "(?:http[s]?://)?(?:w{3}\.)?img.auctiva.com\S+(?:jpe?g|gif|png|bmp|svg)"
-    )
+    if list_ext is None:
+        list_ext = ["jpg", "jpeg", "gif", "png", "bmp", "svg"]
 
-    def _slash_trip(s: str):
+    # Truncate leading slashes before a folder name
+    def _slash_truncate(s: str):
         return s.lstrip("/").lstrip("//")
 
+    # Create missing downloaded images and goal folders
     def _create_folder(folder):
         access_rights = 0o755
         try:
@@ -26,16 +28,32 @@ def images_downloader(
         except OSError:
             print("Create directory %s failed" % os.path.abspath(folder))
 
+    # Regular expressions to search for URLs
+    def _compile_regex(list_extensions):
+        pattern_protocol = r"(?:http[s]?://)?(?:w{3}\.)?"
+        pattern_path = r"\S+\."
+        pattern_ext = "(?:" + "|".join(list_extensions) + ")"
+        return re.compile(
+            r"{0}{1}{2}{3}".format(
+                pattern_protocol, old_site_name, pattern_path, pattern_ext
+            )
+        )
+
+    # Parsing a separate source file with the search for the specified URLs,
+    # downloading the corresponding images to the specified folder and
+    # updating the URL in the goal html file
     def _download_url_create_goal_files(file_name):
+        # Opening / creating source and goal html files
         source_file = open(os.path.join(source_folder, file_name), "r")
         goal_file = open(os.path.join(goal_folder, file_name), "w")
-        # temp_file = open(os.path.join(goal_folder, "temp.txt"), "a")
+        # Reading source html file
         content_source = source_file.read()
         content_goal = content_source
+        # Search all links with a given domain name for image files using regular expression
         search = pattern.finditer(content_source)
+        # Processing found url images
         for match in reversed(list(search)):
-            # temp_file.write(match.group(0) + "\n")
-            url_file = match.group(0)
+            # Change URL addresses to reflect the new site domain in the content of the target html file
             content_goal = (
                 content_goal[: match.start()]
                 + content_goal[match.start() : match.end()].replace(
@@ -43,32 +61,41 @@ def images_downloader(
                 )
                 + content_goal[match.end() :]
             )
+            # Getting url link
+            url_file = match.group(0)
+            # Create missing folders for storing downloaded images
             download_folder = os.path.abspath(
                 image_folder + "/" + os.path.dirname(urlparse(match.group(0)).path)
             )
             _create_folder(download_folder)
-
-            content_url = requests.get(url_file)
+            # Download and save images by URL
             filename_url = os.path.join(
                 download_folder, os.path.basename(urlparse(match.group(0)).path)
             )
-            print(filename_url)
+            content_url = requests.get(url_file)
             f = open(filename_url, "wb")
             f.write(content_url.content)
             f.close()
+            # Output the file name of the downloaded image to the console. Can be deleted
+            print(filename_url)
+        # Saving and closing source and goal html files
         goal_file.write(content_goal)
         source_file.close()
         goal_file.close()
-        # temp_file.close()
 
-    source_folder = _slash_trip(source_folder)
-    image_folder = _slash_trip(image_folder)
-    goal_folder = _slash_trip(goal_folder)
-    file_name = "ebay-new.html"
-
+    # Truncate leading slashes before a folder name
+    source_folder = _slash_truncate(source_folder)
+    image_folder = _slash_truncate(image_folder)
+    goal_folder = _slash_truncate(goal_folder)
+    # Regular expressions to search for URLs
+    pattern = _compile_regex(list_ext)
+    # Create missing downloaded images and goal folders
     _create_folder(goal_folder)
     _create_folder(image_folder)
-    _download_url_create_goal_files(file_name)
+    # Search and processing of all html resource files in the resource folder
+    for name in os.listdir(source_folder):
+        if os.path.isfile(os.path.abspath(os.path.join(source_folder, name))):
+            _download_url_create_goal_files(name)
 
 
 images_downloader(
@@ -77,4 +104,5 @@ images_downloader(
     image_folder="/data/img/",
     old_site_name="img.auctiva.com",
     newsite_name="test.com",
+    list_ext=["jpg", "jpeg", "gif", "png", "bmp", "svg"],
 )
