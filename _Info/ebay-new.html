@@ -1,0 +1,516 @@
+<style>
+	main {
+		min-width: 320px;
+		max-width: 100%;
+		padding: 0;
+		margin: 0 auto;
+		background-image: url('https://pipes2go.com/upload/ebp/img/bgr.png');
+	}
+
+	#wrapper {
+		width: 891px;
+		margin: 0 auto;
+	}
+
+	.bgr-top {
+		width: 100%;
+		height: 163px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/bgr_line.png');
+		background-repeat: repeat-x;
+	}
+
+	.bgr-menu {
+		width: 761px;
+		height: 55px;
+		position: absolute;
+    	margin: 3px 0 0 66px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/menu_bgr6.png');
+		background-repeat: repeat-x;
+	}
+
+	section {
+		display: none;
+		padding: 20px 0 0;
+	}
+
+	input {
+		display: none;
+	}
+
+	label {
+		float:left;
+		position: relative;
+   	 	z-index: 1;
+	    color: #442500;
+	    font-size: 20px;
+	    font-family: Arial;
+	    font-weight: 700;
+	    text-align: center;
+	    width: 115px;
+	    margin-top: 7px;
+	    text-shadow: 0px 1px 2px #f1e39e;
+	    cursor: pointer;
+	    border-bottom: 2px solid transparent;
+	}
+
+	label:hover {
+		text-decoration: underline;
+	}
+
+	input:checked + label {
+		color: #1f1101;
+	}
+
+	#tab1:checked ~ #content1,
+	#tab2:checked ~ #content2,
+	#tab3:checked ~ #content3,
+	#tab4:checked ~ #content4,
+	#tab5:checked ~ #content5,
+	#tab6:checked ~ #content6 {
+		display: block;
+	}
+
+	.block-title {
+		width: 96%;
+    	height: 34px;
+    	margin: 0 auto;
+    	padding: 12px 0 0 0;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_fill.png');
+		background-repeat: repeat-x;
+	}
+
+	.head {
+		color: #f1e39e;
+	    font-size: large;
+	    font-family: Verdana;
+	    text-align: left;
+	    font-weight: 700;
+	    text-shadow: 1px 1px 2px black;
+		position: absolute;
+    	margin: -35px 0 0 20px;
+	}
+
+	.block-title:before {
+		content: "";
+	    position: absolute;
+	    margin: -12px 0 0 -16px;
+	    width: 16px;
+	    height: 46px;
+	    background-image: url(https://pipes2go.com/upload/ebp/img/ls_bl_title_left.png);
+	    background-repeat: no-repeat;
+	}
+
+	.block-title:after {
+		content: "";
+		position: absolute;
+		margin: -12px 0 0 855px;
+		width: 16px;
+		height: 46px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_right.png');
+		background-repeat: no-repeat;
+	}
+
+	h1 {
+		color: #442500;
+    	font-weight: normal;
+    	text-align: center;
+	}
+
+	h2 {
+		color: #442500;
+    	font-weight: bold;
+    	text-align: left;
+	}
+
+	h3 {
+		color: #442500;
+    	font-weight: bold;
+    	font-size: 16px;
+    	text-align: left;
+    	text-transform: uppercase;
+	}
+
+	h4 {
+		color: #442500;
+    	font-weight: normal;
+    	text-align: center;
+    	font-size: 21px;
+	}
+
+	p {
+		color: #442500;
+	    font-weight: normal;
+	    text-align: left;
+	    font-size: 19px;
+	    letter-spacing: 1px;
+	    line-height: 27px;
+	    font-family: Tahoma;
+	}
+
+	.red {
+		color: #b90303;
+	}
+
+	.green {
+		color: green;
+	}
+
+	.blue {
+		color: blue;
+	}
+
+	.link-store {
+	    width: 200px;
+	    margin: 20px;
+	    background-color: #d9cece;
+	    border-top: 1px solid #663333;
+	    border-bottom: 1px solid #663333;
+	    border-left: 6px solid #663333;
+	    border-right: 6px solid #663333;
+	}
+
+	.link-store img {
+		max-width: 100%;
+		width: 200px;
+		height: 160px;
+		margin-bottom: 8px;
+	}
+
+	.link-store p {
+		font-weight: bold;
+	    font-family: verdana, sans serif;
+	    background-color: #d9cece;
+	    color: #663333;
+	    text-align: center;
+	    font-size: 16px;
+	    height: 20px;
+	    margin: 17px 0 0 0;
+	    padding: 0;
+	    line-height: 0px;
+	}
+
+	.link-store small {
+		width: 135px;
+		color: #333333;
+	    text-align: left;
+	    margin: 0 5px 0 10px;
+	    font-size: 12px;
+	    float: left;
+	}
+
+	.link-store small {
+		width: 135px;
+		color: #333333;
+	    text-align: left;
+	    margin: 0 5px 0 10px;
+	    font-size: 12px;
+	    float: left;
+	}
+
+	.link-store .link {
+		width: 30px;
+    	height: 30px;
+	}
+	
+</style>
+
+
+<main>
+	<div class="bgr-top"></div>
+	<div id="wrapper">
+		<img src="https://pipes2go.com/upload/ebp/img/top_img2.png" width="767px" height="501px" border="0" style="margin: 0 auto; display: block;">
+		<div style="clear: both;"></div>
+
+		<div class="bgr-menu"></div>
+		<input id="tab1" type="radio" name="tabs" checked>
+		<label for="tab1" style="margin-left: 73px;">Item Description</label>
+		<input id="tab2" type="radio" name="tabs">
+		<label for="tab2" style="margin: 16px 0 0 7px;">Our store</label>
+		<input id="tab3" type="radio" name="tabs">
+		<label for="tab3" style="margin-left: 8px;">Payment Policy</label>
+		<input id="tab4" type="radio" name="tabs">
+		<label for="tab4" style="margin-left: 11px;">Shipping Policy</label>
+		<input id="tab5" type="radio" name="tabs">
+		<label for="tab5" style="margin-left: 21px;">Return Policy</label>
+		<input id="tab6" type="radio" name="tabs">
+		<label for="tab6" style="margin-left: 12px;">Feedback Policy</label>
+		<div style="clear: both;"></div>
+		
+
+		<section id="content1">
+			<div class="block-title"></div>
+			<h2 class="head">Item Description</h2>
+			<h1><font size="5" face="Arial">Extra Long</font><font size="5"> HAND CARVED Smoking Pipe </font>
+			<strong>
+			<font size="5"> *</font></strong><font style="font-size: 16pt" face="Times New Roman"><b>Eagle</b></font><strong><font size="5">*</font></strong></h1>
+			<p class="MsoNormal" style="text-align: justify; line-height: 150%" align="center">
+			<font face="Times"><span style="letter-spacing: 1pt"><b>
+			<font style="font-size: 16pt" face="Times New Roman">Dear Customers!</font></b></span></font><font size="3" face="Arial">&nbsp;&nbsp;&nbsp;
+			</font></p>
+		<p class="MsoNormal" style="text-align: justify; line-height: 150%" align="center">
+		<font size="3" face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; To your attention there is an excellent 
+		pipe <b>EXTRA LONG&nbsp;</b><strong>Hand carved Tobacco Smoking PIPE </strong>
+		with <strong>author’s signature</strong>. This pipe is &nbsp;made&nbsp; famous
+		<strong>Ukrainian master</strong>.&nbsp; This model is<strong> UNIQUE ,
+		</strong>amazes with its original fulfillment of bowl, jewelry carving 
+		and elegance of design.<strong> BRAND NEW NEVER USED!!!</strong></font></p>
+			<div style="margin-left: 30px">
+				<h2 class="red">Pipe Dimensions:</h2>
+
+				<p><em>Length</em> ~ <strong>25,25 inch.</strong></p>
+				<p><em>Height of bowl</em> ~ <strong>2,6 inch.</strong></p>
+				<p><em>Width of bowl</em> ~ <strong>1,8 inch.</strong></p>
+				<p><em>Inside bowl diameter</em> ~ <strong>0,7 inch.</strong></p>
+				<p><em>Inside height of bowl</em> ~ <strong>1,84 inch.</strong></p>
+				<p><em>Built-in cool filter</em> ~ <strong>For 9 mm filter</strong></p>
+			</div>
+
+			<h4 class="red">Please note that color and shape may vary slightly from the picture.</h4>
+			<h4 class="red">Each item is handmade and slight variations may occur.</h4>
+			<h4 class="blue">Bitte beachten Sie, dass Farbe und Schliff vom Bild variieren k&ouml;nnen.</h4>
+			<h4 class="blue">Jedes Teil ist handgemacht und kann somit geringf&uuml;gige Abweichungen haben.</h4>
+			<h4><font color="#008000">Si prega di notare che il colore e la forma puт variare leggermente dalla foto.</font></h4>
+			<h4 class="green">Ogni pezzo и fatto a mano e puт accadere piccole modifiche.</h4>
+
+			<font face="Times">
+		<div style="text-align: center; margin-top: 10px">
+			<div style="text-align: center; margin-top: 10px">
+				<div style="text-align: center; margin-top: 10px">
+					<div style="text-align: center; margin-top: 10px">
+						<div style="text-align: center; margin-top: 10px">
+							<div style="text-align: center; margin-top: 10px">
+								<div style="text-align: center; margin-top: 10px">
+									<div style="text-align: center; margin-top: 10px">
+										<div style="text-align: center; margin-top: 10px">
+											<div style="text-align: center; margin-top: 10px">
+												<div style="text-align: center; margin-top: 10px">
+													<div style="text-align: center; margin-top: 10px">
+														<div style="text-align: center; margin-top: 10px">
+															<div style="text-align: center; margin-top: 10px">
+																<div style="text-align: center; margin-top: 10px">
+																	<div style="text-align: center; margin-top: 10px">
+																		<div style="text-align: center; margin-top: 10px">
+																			<div style="text-align: center; margin-top: 10px">
+																				<div style="text-align: center; margin-top: 10px">
+																					<div style="text-align: center; margin-top: 10px">
+																						<div style="text-align: center; margin-top: 10px">
+																							<div style="text-align: center; margin-top: 10px">
+																								<div style="text-align: center; margin-top: 10px">
+																									<div style="text-align: center; margin-top: 10px">
+																										<div style="text-align: center; margin-top: 10px">
+																											<div style="text-align: center; margin-top: 10px">
+																												<div style="text-align: center; margin-top: 10px">
+																													<div style="text-align: center; margin-top: 10px">
+																														<div style="text-align: center; margin-top: 10px">
+																															<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/526066032_o.jpg">&nbsp;
+																															<p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/527820942_o.jpg"></p>
+																															&nbsp; <img style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/220020183_o.jpg"><div style="text-align: center; margin-top: 10px">
+																																<div style="text-align: center; margin-top: 10px">
+																																	<div style="text-align: center; margin-top: 10px">
+																																		<div style="text-align: center; margin-top: 10px">
+																																			<div style="text-align: center; margin-top: 10px">
+																																				<div style="text-align: center; margin-top: 10px">
+																																					<div style="text-align: center; margin-top: 10px">
+																																						<div style="text-align: center; margin-top: 10px">
+																																							<div style="text-align: center; margin-top: 10px">
+																																								<font color="#008080"><span style="font-size: 16pt">You can choose any pipe bowl and make your own super pipe, just tell us which bowl you would like and we will send you a picture showing how it would look like.&nbsp;</span></font></div>
+																																						</div>
+																																					</div>
+																																				</div>
+																																			</div>
+																																		</div>
+																																	</div>
+																																</div>
+																															</div>
+																															<p>&nbsp; </p>
+																															<table cellspacing="2" cellpadding="2" border="0">
+																																<tr>
+																																	<td align="center"><font size="4" face="Times,sans-serif"><a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Super-Difficult-Carving_W0QQfsubZ1303223014" target="_blank"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/866284281_o.jpg" alt=" " width="798" height="588" border="0" align="left"></a><br>
+																																	<b><a href="https://www.ebay.com/itm/252371862154" target="_blank"><font color="#FF0000">ANY BOWL FROM <span lang="en-us">*SUPER SERIES*</span> PIPES + <span lang="en-us">EXTRA </span>LONG STEAM = YOUR NEW<span lang="en-us"> ORION</span> PIPE</font></a></b></font></td>
+																																</tr>
+																															</table>
+																														</div>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</font>
+		<h4 style="font-weight: bold">By using only high quality woods, to suit Your style and individuality.</h4>
+			<h4 class="blue">Durch das Verarbeiten von Holz mit h&ouml;chster Qualit&auml;t bestimmst Du Deinen eigenen Stil und Individualit&auml;t.</h4>
+			<h4 class="green">Se si utilizza solo legno di alta qualitа, per soddisfare il vostro stile e personalitа.</h4>
+		</section>
+		<section id="content2">
+			<div class="block-title"></div>
+			<h2 class="head">Our Store</h2>
+			
+			<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+				<div class="link-store">
+					<p>*The First Class*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/The-First-Class-/_i.html?_fsub=1303222014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353700_o.jpg" />
+					</a>
+					<small>The First Class Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Extra-Long*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Orion-Extra-Long-/_i.html?_fsub=2880440014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/663595380_o.jpg" />
+					</a>
+					<small>Extra - Long Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Super -Difficult*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Super-Difficult-Carving-/_i.html?_fsub=1303223014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353215_o.jpg" />
+					</a>
+					<small>Super (Difficult Carving) Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Fairy-Tale*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Fairy-Tale-/_i.html?_fsub=1303224014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/731467456_o.jpg" />
+					</a>
+					<small>Fairy-Tale Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Modern*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Modern-Incrustation-/_i.html?_fsub=1303225014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/487130240_o.jpg" />
+					</a>
+					<small>Modern & Incrustation Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Briar*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Briar-Smoking-Pipe-/_i.html?_fsub=8204240014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/811191172_o.jpg" />
+					</a>
+					<small>Briar Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Cigarette Holders*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Cigarette-Holders-/_i.html?_fsub=576095014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353227_o.jpg" />
+					</a>
+					<small>Cigarette Holders</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Holder Sets*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Holder-Sets-Lowest-Price-/_i.html?_fsub=1276459014&_sid=726194764&_trksid=p4634.c0.m322" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353233_o.jpg" />
+					</a>
+					<small>Vintage Cigarette Holder Sets</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Accessories*</p>
+					<a href="https://www.ebaystores.com/Favourite-Ukraine/Accessories-/_i.html?_trksid=p4634.c0.m322&_fsub=21494913&_sid=726194764&" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353219_o.jpg" />
+					</a>
+					<small>Accessories</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563" target="_blank">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</section>
+		<section id="content3">
+			<div class="block-title"></div>
+			<h2 class="head">Payment Policy</h2>
+			<h4><strong>We only accept PayPal payments.</strong></h4>
+			<p><strong>For PayPal payments please go to   <a href="https://www.paypal.com" target="_blank">www.PayPal.com</a></strong></p>
+		</section>
+		<section id="content4">
+			<div class="block-title"></div>
+			<h2 class="head">Shipping Policy</h2>
+			<p>We post items next business day after payment.
+			<p>International shipping by <strong>Ukrposhta (Registered Airmail Service)</strong> usually takes about <strong>10-14</strong> days to most countries, but in some cases delays can cause delivery times up to <strong>30</strong> days or even more.</p>
+			<p>We can not take responsibility for international shipments what are lost or delayed.</p>
+			<p>However, we will do everything we can to help trace shipment delayed more than 30 days.</p>
+		</section>
+		<section id="content5">
+			<div class="block-title"></div>
+			<h2 class="head">Return Policy</h2>
+			<p>If you are unhappy with your purchase for any reason, your item can be returned for a refund of your purchase price or for exchange.</p>
+			<p>You can return the item within 14 days from the delivery date.</p>
+			<p>Item must be in perfect condition.</p>
+			<p>Buyer pays the return postage cost.</p>
+			<p>Refund will be issued to your PayPal account.</p>
+		</section>
+		<section id="content6">
+			<div class="block-title"></div>
+			<h2 class="head">Feedback Policy</h2>
+			<p>PLEASE E-MAIL US BEFORE LEAVING NEGATIVE FEEDBACK, OR OPEN ANY DISPUTE ON eBAY, IT WILL JUST UPSET AND HURT BOTH SIDES.</p>
+			<p>All communications can be handled through email.</p>
+			<p>We strive to answer all emails as quickly as possible, but due to high e-mail volume it may take time for us to reply.</p>
+			<p>Thanks in advance for your patience.</p>
+			<p>All issues, if any appears, can be resolved in friendly manner.</p>
+			<h4><strong>We appreciate your positive eBay feedback.</strong></h4>
+			<h4><strong>If you are satisfied, please leave positive feedback for us.</strong></h4>
+		</section>
+	</div>
+	<div class="bgr-top"></div>
+</main>
+
