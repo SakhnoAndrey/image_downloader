@@ -3,6 +3,7 @@ import re
 import requests
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup, Tag, NavigableString
+import lxml
 
 
 # Create missing downloaded images and goal folders
@@ -32,6 +33,12 @@ def div_has_style_background_image(tag):
     return tag.name == "div" and tag.has_attr("style")
 
 
+def label_after_input(current_tag):
+    while current_tag is None or current_tag.name != "label":
+        current_tag = current_tag.nextSibling
+    return current_tag
+
+
 class ImageDownloader:
     def __init__(
         self,
@@ -48,6 +55,10 @@ class ImageDownloader:
         self.image_folder = image_folder
         self.new_site_name = new_site_name
         self.old_site_name = old_site_name
+        self.id = 1
+        self.p_id = 1
+        self.pic = 1
+        self.margin_top = 0
         self.list_ext = (
             ["jpg", "jpeg", "gif", "png", "bmp", "svg"]
             if list_ext is None
@@ -66,17 +77,24 @@ class ImageDownloader:
                 goal_file = open(os.path.join(self.goal_folder, name), "w")
                 # Reading source html file
                 self.content = source_file.read()
-                # Parsing html file
-                # Parse with using Regex
-                # self.parse_and_download_images_by_regex()
+                # Change in html file before download images
+                self.change_http_https()  # Task #4
                 # Create BeautefulSoup object
-                self.soup = BeautifulSoup(self.content, "html.parser")
+                self.soup = BeautifulSoup(
+                    self.content, "html.parser"
+                )  # html.parser or lxml
                 # STAGES #0
-                # self.background_img_to_result()
-                self.post_items_after_payment()
+                # self.background_img_to_result() # Task #1
+                # self.shipping_policy()  # Task #2
+                # self.feedback_policy()  # Task #3
+                self.replace_div_t_switch()  # Task #6
+                self.replace_div_p_switch_1()  # Task #7-8
+                self.replace_div_p_switch_2()  # Task #9-10
+                self.replace_div_p_switch_3()  # Task #11-12
+                self.replace_checkbox_label_img()  # Task #13
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
-                ### self.parse_and_download_images_bs4()
+                # self.parse_and_download_images_bs4() # STAGES #1
                 # Save content from BeautefulSoup
                 self.content = self.soup.prettify()
                 # Saving and closing source and goal html files
@@ -84,6 +102,7 @@ class ImageDownloader:
                 source_file.close()
                 goal_file.close()
 
+    # STAGES #1
     # Function download image from url
     def image_download_from_url(self, url_file):
         # Create missing folders for storing downloaded images
@@ -121,7 +140,6 @@ class ImageDownloader:
                 + self.content[match.end() :]
             )
 
-    # STAGES #1
     # Parsing, download and changed links of file with using BeautifulSoup
     def parse_and_download_images_bs4(self):
         # Handle tags img, download images from site and change links
@@ -156,8 +174,8 @@ class ImageDownloader:
         el.append(tag)
         return tag
 
-    # Task #2. Replace post items after payment
-    def post_items_after_payment(self):
+    # Task #2. Shipping policy
+    def shipping_policy(self):
         elem = self.soup.find(name="section", attrs={"id": "content4"})
         elem.p.decompose()
         tag = self.create_tag(
@@ -213,7 +231,83 @@ class ImageDownloader:
         )
         tag_p.append(".")
 
-        # Task #3.
+    # Task #3. Feedback policy
+    def feedback_policy(self):
+        elem = self.soup.find(name="section", attrs={"id": "content6"})
+        for el in elem.find_all("p"):
+            if "NEGATIVE FEEDBACK" in el.string:
+                el.string = (
+                    "Please e-mail us before leaving negative feedback, or open any dispute on eBay. "
+                    "We will do our best to solve the issue for you."
+                )
+
+    # Task #4. Change http to https
+    def change_http_https(self):
+        self.content = self.content.replace("http:", "https:")
+
+    # Task #6. Replace div - radio - t_switch
+    def type_id_number(self, type_switch):
+        number_id = self.id if type_switch == "t_switch" else self.p_id
+        elem_id = ("" if type_switch == "t_switch" else "p_") + "id" + str(number_id)
+        # print(elem_id)
+        return elem_id
+
+    def replace_div_input_label(self, name_switch="t_switch"):
+        for tag_div in self.soup.find_all(name="div"):
+            for tag_input in tag_div.find_all(
+                name="input",
+                attrs={"type": "radio", "name": name_switch, "checked": ""},
+                recursive=False,
+            ):
+                checked = "checked" in tag_input.attrs
+                tag_label = label_after_input(tag_input)
+                tag_div.attrs = {
+                    "class": ("" if name_switch == "t_switch" else "sub-") + "slider"
+                }
+                tag_input.attrs = {"type": "radio", "name": name_switch}
+                if checked:
+                    tag_input["checked"] = "checked"
+                tag_label.attrs = (
+                    {}
+                    if name_switch != "t_switch"
+                    else {
+                        "class": "head-label",
+                        "style": "margin-top: {0}px;".format(self.margin_top),
+                    }
+                )
+                tag_input["id"] = tag_label["for"] = self.type_id_number(name_switch)
+                if name_switch == "t_switch":
+                    self.id += 1
+                    self.margin_top += 140
+                else:
+                    self.p_id += 1
+
+    def replace_div_t_switch(self):
+        self.replace_div_input_label()
+
+    # Task #7-8. Replace div - radio - p_switch_1
+    def replace_div_p_switch_1(self):
+        self.replace_div_input_label(name_switch="p_switch_1")
+
+    # Task #9-10. Replace div - radio - p_switch_2
+    def replace_div_p_switch_2(self):
+        self.replace_div_input_label(name_switch="p_switch_2")
+
+    # Task #11-12. Replace div - radio - p_switch_3
+    def replace_div_p_switch_2(self):
+        self.replace_div_input_label(name_switch="p_switch_3")
+
+    # Task #13. Replace checkbox - label - image
+    def replace_checkbox_label_img(self):
+        for tag_input in self.soup.find_all(name="input", attrs={"type": "checkbox"}):
+            tag_label = label_after_input(tag_input)
+            tag_img_in_label = tag_label.find(name="img")
+            if tag_img_in_label:
+                if tag_img_in_label["src"]:
+                    name_pic = "pic-" + str(self.pic)
+                    tag_input.attrs = {"type": "checkbox", "id": name_pic}
+                    tag_label.attrs = {"for": name_pic, "class": "lightbox"}
+                    self.pic += 1
 
 
 # Initializing custom values for parsing

@@ -1,0 +1,1250 @@
+<style>
+	main {
+		min-width: 320px;
+		max-width: 100%;
+		padding: 0;
+		margin: 0 auto;
+		background-image: url('https://pipes2go.com/upload/ebp/img/bgr.png');
+		font-family: "Times New Roman";
+	}
+
+	#wrapper {
+		width: 891px;
+		margin: 0 auto;
+	}
+
+	.bgr-top {
+		width: 100%;
+		height: 163px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/bgr_line.png');
+		background-repeat: repeat-x;
+	}
+
+	.bgr-menu {
+		width: 761px;
+		height: 55px;
+		position: absolute;
+    	margin: 3px 0 0 66px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/menu_bgr6.png');
+		background-repeat: repeat-x;
+	}
+
+	section {
+		display: none;
+		padding: 20px 0 0;
+	}
+
+	input {
+		display: none;
+	}
+
+	label {
+		float:left;
+		position: relative;
+   	 	z-index: 1;
+	    color: #442500;
+	    font-size: 20px;
+	    /*font-family: Arial;*/
+	    font-weight: 700;
+	    text-align: center;
+	    width: 115px;
+	    margin-top: 7px;
+	    text-shadow: 0px 1px 2px #f1e39e;
+	    cursor: pointer;
+	    border-bottom: 2px solid transparent;
+	}
+
+	label:hover {
+		text-decoration: underline;
+	}
+
+	input:checked + label {
+		color: #1f1101;
+	}
+
+	#tab1:checked ~ #content1,
+	#tab2:checked ~ #content2,
+	#tab3:checked ~ #content3,
+	#tab4:checked ~ #content4,
+	#tab5:checked ~ #content5,
+	#tab6:checked ~ #content6 {
+		display: block;
+	}
+
+	.block-title {
+		width: 96%;
+    	height: 34px;
+    	margin: 0 auto;
+    	padding: 12px 0 0 0;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_fill.png');
+		background-repeat: repeat-x;
+	}
+
+	.head {
+		color: #f1e39e;
+	    font-size: large;
+	    /*font-family: Verdana;*/
+	    text-align: left;
+	    font-weight: 700;
+	    text-shadow: 1px 1px 2px black;
+		position: absolute;
+    	margin: -35px 0 0 20px;
+	}
+
+	.block-title:before {
+		content: "";
+	    position: absolute;
+	    margin: -12px 0 0 -16px;
+	    width: 16px;
+	    height: 46px;
+	    background-image: url(https://pipes2go.com/upload/ebp/img/ls_bl_title_left.png);
+	    background-repeat: no-repeat;
+	}
+
+	.block-title:after {
+		content: "";
+		position: absolute;
+		margin: -12px 0 0 855px;
+		width: 16px;
+		height: 46px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_right.png');
+		background-repeat: no-repeat;
+	}
+
+	h1 {
+		color: #442500;
+    	font-weight: normal;
+    	text-align: center;
+	}
+
+	h2 {
+		color: #442500;
+    	font-weight: bold;
+    	text-align: left;
+	}
+
+	h3 {
+		color: #442500;
+    	font-weight: bold;
+    	font-size: 16px;
+    	text-align: left;
+    	text-transform: uppercase;
+	}
+
+	h4 {
+		color: #442500;
+    	font-weight: normal;
+    	text-align: center;
+    	font-size: 21px;
+		letter-spacing: 2px;
+	}
+
+	p {
+		color: #442500;
+	    font-weight: normal;
+	    text-align: left;
+	    font-size: 19px;
+	    letter-spacing: 1px;
+	    line-height: 27px;
+	    /*font-family: Tahoma;*/
+	}
+
+	.red {
+		color: #b90303;
+	}
+
+	.green {
+		color: green;
+	}
+
+	.blue {
+		color: blue;
+	}
+
+	.link-store, .link-gallery {
+	    width: 200px;
+	    margin: 20px;
+	    background-color: #d9cece;
+	    border-top: 1px solid #663333;
+	    border-bottom: 1px solid #663333;
+	    border-left: 6px solid #663333;
+	    border-right: 6px solid #663333;
+	}
+
+	.link-store img, .link-gallery img {
+		max-width: 100%;
+		width: 200px;
+		height: 160px;
+		margin-bottom: 8px;
+	}
+
+	.link-gallery {
+	    width: 200px;
+	    margin: 5px;
+	}
+
+	.link-gallery img {
+		max-width: 100%;
+		width: 200px;
+		height: 160px;
+	}
+
+	.link-store p, .link-gallery p {
+		font-weight: bold;
+	    /*font-family: verdana, 'sans serif';*/
+	    background-color: #d9cece;
+	    color: #663333;
+	    text-align: center;
+	    font-size: 16px;
+	    height: 20px;
+	    margin: 17px 0 0 0;
+	    padding: 0;
+	    line-height: 0px;
+	}
+
+	.link-store small {
+		width: 135px;
+		color: #333333;
+	    text-align: left;
+	    margin: 0 5px 0 10px;
+	    font-size: 12px;
+	    float: left;
+	}
+
+	.link-store small {
+		width: 135px;
+		color: #333333;
+	    text-align: left;
+	    margin: 0 5px 0 10px;
+	    font-size: 12px;
+	    float: left;
+	}
+
+	.link-store .link {
+		width: 30px;
+    	height: 30px;
+	}
+
+	.grid-item {
+	  width: 25%;
+	  opacity: .95;
+	  -webkit-transition: opacity .5s;
+	          transition: opacity .5s;
+	    float: none;
+	    position: static;
+	    
+	    margin-top: 0;
+	    text-shadow: none;
+	    cursor: pointer;
+	    border: none;
+	}
+
+	.grid-item:hover {
+	  opacity: 1;
+	  text-decoration: none;
+	}
+
+	.lightbox {
+	  width: 100%;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	}
+
+	.lightbox {
+	  z-index: 2;
+	  min-height: 100%;
+	  overflow: auto;
+	  -webkit-transform: scale(0);
+	      -ms-transform: scale(0);
+	          transform: scale(0);
+	  -webkit-transition: -webkit-transform .5s ease-out;
+	          transition: transform .5s ease-out;
+	}
+
+	.lightbox img {
+	  position: fixed;
+	  top: calc(1000px + 50%);
+	  left: 50%;
+	  max-width: 56%;
+	  max-height: 56%;
+	  -webkit-transform: translate(-50%, -50%);
+	      -ms-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	}
+
+	input[type="checkbox"]:checked + .lightbox {
+	  -webkit-transform: scale(1);
+	      -ms-transform: scale(1);
+	          transform: scale(1);
+	}
+
+	.slider {
+		width: 100%;
+		margin: 10px auto 50px auto;
+	}
+
+	.slider .sub-slider>img {
+		margin-top: 480px;
+		position: absolute;
+		width: 800px;
+		left: 0;
+	}
+
+	.slider label {
+	    float: left;
+	    position: static;
+	    width: auto;
+	    height: 60px;
+	    border: none;
+	    background-color: #FFF;
+	}
+
+	.slider .head-label {
+		position: absolute;
+    	margin: 0 0 0 575px;
+		border-top: none;
+		border-right: 5px solid transparent;
+		border-bottom: none;
+		border-left: 5px solid #AAA;
+		height: 130px;
+	}
+
+	.slider .sub-slider label {
+		width: 110px;
+		height: 110px;
+		filter: grayscale(1);
+		-moz-filter: grayscale(1);
+		-o-filter: grayscale(1);
+	}
+
+	.slider .sub-slider label img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.slider input[name="t_switch"] {
+		display: none;
+	}
+
+	.sub-slider {
+		display: none;
+		width: 570px;
+		position: absolute;
+	    padding-top: 19px;
+	    background-color: #FFF;
+    	flex-wrap: wrap;
+    	align-items: center;
+		border: 5px solid #aaa;
+	}
+
+	.img-result {
+		background-repeat: no-repeat; 
+		background-size: contain; 
+		width: 830px; 
+		height: 470px; 
+		background-color: #FFF;
+		position: absolute; 
+		top: 500px;
+	}
+
+	.slider input[name="t_switch"]:checked + label {
+		border-top: 5px solid #AAA;
+		border-right: 5px solid #AAA;
+		border-bottom: 5px solid #AAA;
+		border-left: none;
+	}
+
+	.slider input[name="t_switch"]:checked + label + .sub-slider{
+		display: flex;
+	}
+
+	.slider input[name="p_switch_1"]:checked + label {
+		filter: grayscale(0);
+	}
+
+	.slider input[name="p_switch_2"]:checked + label {
+		filter: grayscale(0);
+	}
+
+	.slider input[name="p_switch_3"]:checked + label {
+		filter: grayscale(0);
+	}
+
+	.slider input[name="p_switch_1"] ~ .img-result {
+		opacity: 0;
+	}
+
+	.slider input[name="p_switch_1"]:checked + label + .img-result {
+		opacity: 1;
+	}
+
+	.slider input[name="p_switch_2"] ~ .img-result {
+		opacity: 0;
+	}
+
+	.slider input[name="p_switch_2"]:checked + label + .img-result {
+		opacity: 1;
+	}
+
+	.slider input[name="p_switch_3"] ~ .img-result {
+		opacity: 0;
+	}
+
+	.slider input[name="p_switch_3"]:checked + label + .img-result {
+		opacity: 1;
+	}
+	
+</style>
+
+
+<main>
+	<div class="bgr-top"></div>
+	<div id="wrapper">
+		<img src="https://pipes2go.com/upload/ebp/img/top_img2.png" width="767px" height="501px" border="0" style="margin: 0 auto; display: block;">
+		<div style="clear: both;"></div>
+
+		<div class="bgr-menu"></div>
+		<input id="tab1" type="radio" name="tabs" checked>
+		<label for="tab1" style="margin-left: 73px;">Item Description</label>
+		<input id="tab2" type="radio" name="tabs">
+		<label for="tab2" style="margin: 16px 0 0 7px;">Our store</label>
+		<input id="tab3" type="radio" name="tabs">
+		<label for="tab3" style="margin-left: 8px;">Payment Policy</label>
+		<input id="tab4" type="radio" name="tabs">
+		<label for="tab4" style="margin-left: 11px;">Shipping Policy</label>
+		<input id="tab5" type="radio" name="tabs">
+		<label for="tab5" style="margin-left: 21px;">Return Policy</label>
+		<input id="tab6" type="radio" name="tabs">
+		<label for="tab6" style="margin-left: 12px;">Feedback Policy</label>
+		<div style="clear: both;"></div>
+		
+
+		<section id="content1">
+			<div class="block-title"></div>
+			<h2 class="head">Item Description</h2>
+			<h1><strong>The Buyer can choose individual bowl and stem to create their Own model of pipe</strong></h1>
+			<p>Brand new, never used stylish tobacco smoking pipe stand. Royal quality.</p>
+			<p>Our pipes are made of an environmentally friendly pear wood, dried in a natural condition for at least 2 years.</p>
+			<p>For toning tubes we use high-quality alcohol wood stains.</p>
+			<p>The final polishing with refined carnauba wax, that will allow You to polish the pipe with a soft cloth, when it is necessary. It will help You to re-establish its original look.</p>
+			<p>The bowl is the main part of a good pipe and it's carefully hand crafted by Ukrainian artists. Signed by artist.</p>
+			<p>Great Buy for the Connoisseur.</p>
+			<p>It would make a stylish gift or a great addition to your collection.</p>
+			<p>For wholesale buyers we are offering big discounts!</p>
+
+			<div style="margin-left: 30px">
+				<h2 class="red">Pipe bowl dimensions:</h2>
+
+				<p><em>Height of bowl</em> ~ <strong>2,5 inch.</strong></p>
+				<p><em>Width of bowl</em> ~ <strong>1,4 inch.</strong></p>
+				<p><em>Inside bowl diameter</em> ~ <strong>0,7 inch.</strong></p>
+				<p><em>Inside height of bowl</em> ~ <strong>1,68 inch.</strong></p>
+
+				<h2 class="red">Steam dimensions:</h2>
+
+				<p><em>Short steam</em> ~ <strong>8 cm / 3.2 inch.</strong></p>
+				<p><em>Medium steam</em> ~ <strong>12 cm / 4.8 inch.</strong></p>
+				<p><em>Leather steam</em> ~ <strong>27.5 cm / 11 inch.</strong></p>
+				<p><em>All steams fit <strong>9 mm.</strong> filter.</em></p>
+			</div>
+
+			<h4 class="red">Please note that color and shape may vary slightly from the picture.</h4>
+			<h4 class="red">Each item is handmade and slight variations may occur.</h4>
+			<h4 class="blue">Bitte beachten Sie, dass Farbe und Schliff vom Bild variieren können.</h4>
+			<h4 class="blue">Jedes Teil ist handgemacht und kann somit geringfügige Abweichungen haben.</h4>
+			<h4 class="green">Si prega di notare che il colore e la forma può variare leggermente dalla foto.</h4>
+			<h4 class="green">Ogni pezzo è fatto a mano e può accadere piccole modifiche.</h4>
+			<div style="float: left; width: 222px; font-size: 24px; color: #bc332e; padding: 5px 20px; border: 5px solid #AAA;">Select Pipe Bowl</div>
+			<div style="font-size: 24px; color: #bc332e; padding: 5px 20px; border: 5px solid #AAA; margin-left: 277px; float: left; width: 230px;">Select Pipe Steam</div>
+			<div style="clear: both;"></div>
+			<!-- Подборка -->
+
+			<div class="slider">
+				<input type="radio" name="t_switch" id="id1" checked="checked" />
+				<label for="id1" class="head-label" style="margin-top: 0px;">
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485182_o.jpg" width="250" height="130" />
+				</label>
+
+				<div class="sub-slider">
+					<input type="radio" name="p_switch_1" id="p_id1" checked="checked"/>
+					<label for="p_id1">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485365_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485331_o.jpg');"></div>
+
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485331_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id2"/>
+					<label for="p_id2">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485278_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485244_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485244_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id3"/>
+					<label for="p_id3">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485465_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485422_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485422_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id4"/>
+					<label for="p_id4">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485552_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485505_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485505_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id5"/>
+					<label for="p_id5">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485606_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485619_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485619_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id6"/>
+					<label for="p_id6">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485723_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485678_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485678_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id7"/>
+					<label for="p_id7">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485798_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485821_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485821_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id8"/>
+					<label for="p_id8">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485872_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485861_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485861_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id9"/>
+					<label for="p_id9">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485904_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485894_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485894_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id10"/>
+					<label for="p_id10">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485941_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485930_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485930_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id11"/>
+					<label for="p_id11">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485992_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485968_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485968_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id12"/>
+					<label for="p_id12">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486062_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486085_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486085_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id13"/>
+					<label for="p_id13">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486135_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486151_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486151_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id14"/>
+					<label for="p_id14">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486248_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486233_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486233_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id15"/>
+					<label for="p_id15">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486305_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486286_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486286_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id16"/>
+					<label for="p_id16">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486361_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486340_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486340_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id17"/>
+					<label for="p_id17">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486436_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486411_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486411_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id18"/>
+					<label for="p_id18">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486490_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486476_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486476_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id19"/>
+					<label for="p_id19">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486550_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486526_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486526_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_1" id="p_id20"/>
+					<label for="p_id20">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486634_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486604_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486604_o.jpg"/>-->
+				</div>
+				
+				
+
+				<input type="radio" name="t_switch" id="id2"/>
+				<label for="id2" class="head-label" style="margin-top: 140px;">
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485216_o.jpg" width="250" height="130" />
+				</label>
+
+				<div class="sub-slider">
+					<input type="radio" name="p_switch_2" id="p_id21" checked="checked"/>
+					<label for="p_id21">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485365_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485388_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485388_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id22"/>
+					<label for="p_id22">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485278_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485295_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485295_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id23"/>
+					<label for="p_id23">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485465_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485485_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485485_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id24"/>
+					<label for="p_id24">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485552_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485575_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485575_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id25"/>
+					<label for="p_id25">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485606_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485636_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485636_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id26"/>
+					<label for="p_id26">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485723_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485751_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485751_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id27"/>
+					<label for="p_id27">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485798_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485842_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485842_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id28"/>
+					<label for="p_id28">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485872_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485880_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485880_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id29"/>
+					<label for="p_id29">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485904_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485913_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485913_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id30"/>
+					<label for="p_id30">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485941_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485946_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485946_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id31"/>
+					<label for="p_id31">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485992_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486010_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486010_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id32"/>
+					<label for="p_id32">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486062_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486102_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486102_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id33"/>
+					<label for="p_id33">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486135_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486164_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486164_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id34"/>
+					<label for="p_id34">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486248_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486263_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486263_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id35"/>
+					<label for="p_id35">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486305_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486318_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486318_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id36"/>
+					<label for="p_id36">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486361_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486374_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486374_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id37"/>
+					<label for="p_id37">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486436_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486448_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486448_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id38"/>
+					<label for="p_id38">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486490_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486502_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486502_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id39"/>
+					<label for="p_id39">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486550_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486570_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486570_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_2" id="p_id40"/>
+					<label for="p_id40">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486634_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486654_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486654_o.jpg"/>-->
+				</div>
+
+				<input type="radio" name="t_switch" id="id3"/>
+				<label for="id3" class="head-label" style="margin-top: 280px;">
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485201_o.jpg" width="250" height="130" />
+				</label>
+
+				<div class="sub-slider">
+					<input type="radio" name="p_switch_3" id="p_id41" checked="checked"/>
+					<label for="p_id41">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485365_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485402_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485402_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id42"/>
+					<label for="p_id42">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485278_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485310_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485310_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id43"/>
+					<label for="p_id43">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485465_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485440_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485440_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id44"/>
+					<label for="p_id44">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485552_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485592_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485592_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id45"/>
+					<label for="p_id45">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485606_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485649_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485649_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id46"/>
+					<label for="p_id46">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485723_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485767_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485767_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id47"/>
+					<label for="p_id47">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485798_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485853_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485853_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id48"/>
+					<label for="p_id48">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485872_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485889_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485889_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id49"/>
+					<label for="p_id49">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485904_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485920_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485920_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id50"/>
+					<label for="p_id50">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485941_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485955_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485955_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id51"/>
+					<label for="p_id51">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485992_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486029_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486029_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id52"/>
+					<label for="p_id52">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486062_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486113_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486113_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id53"/>
+					<label for="p_id53">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486135_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486173_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486173_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id54"/>
+					<label for="p_id54">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486248_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486274_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486274_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id55"/>
+					<label for="p_id55">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486305_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486326_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486326_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id56"/>
+					<label for="p_id56">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486361_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486390_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486390_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id57"/>
+					<label for="p_id57">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486436_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486463_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486463_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id58"/>
+					<label for="p_id58">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486490_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486515_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486515_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id59"/>
+					<label for="p_id59">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486550_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486583_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486583_o.jpg"/>-->
+
+					<input type="radio" name="p_switch_3" id="p_id60"/>
+					<label for="p_id60">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486634_o.jpg" />
+					</label>
+					<div class="img-result" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486672_o.jpg');"></div>
+					<!--<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486672_o.jpg"/>-->
+				</div>
+				
+			</div>
+
+			<div style="clear: both; height: 1000px;"></div>
+			<!--/Подборка-->
+
+			<div style="margin-bottom: 20px; display: block; height: 15px; width: 97.2%; background: url(https://pipes2go.com/upload/ebp/img/ls_bl_title_fill.png) repeat-x; margin-left: 15px;"></div>
+
+			<input type="checkbox" id="pic-1"/>
+			<label for="pic-1" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485365_o.jpg"/></label>
+			<input type="checkbox" id="pic-2"/>
+			<label for="pic-2" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485278_o.jpg"/></label>
+			<input type="checkbox" id="pic-3"/>
+			<label for="pic-3" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485465_o.jpg"/></label>
+			<input type="checkbox" id="pic-4"/>
+			<label for="pic-4" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485552_o.jpg"/></label>
+			<input type="checkbox" id="pic-5"/>
+			<label for="pic-5" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485606_o.jpg"/></label>
+			<input type="checkbox" id="pic-6"/>
+			<label for="pic-6" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485723_o.jpg"/></label>
+			<input type="checkbox" id="pic-7"/>
+			<label for="pic-7" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485798_o.jpg"/></label>
+			<input type="checkbox" id="pic-8"/>
+			<label for="pic-8" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485872_o.jpg"/></label>
+			<input type="checkbox" id="pic-9"/>
+			<label for="pic-9" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485904_o.jpg"/></label>
+			<input type="checkbox" id="pic-10"/>
+			<label for="pic-10" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485941_o.jpg"/></label>
+			<input type="checkbox" id="pic-11"/>
+			<label for="pic-11" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485992_o.jpg"/></label>
+			<input type="checkbox" id="pic-12"/>
+			<label for="pic-12" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486062_o.jpg"/></label>
+			<input type="checkbox" id="pic-13"/>
+			<label for="pic-13" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486135_o.jpg"/></label>
+			<input type="checkbox" id="pic-14"/>
+			<label for="pic-14" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486248_o.jpg"/></label>
+			<input type="checkbox" id="pic-15"/>
+			<label for="pic-15" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486305_o.jpg"/></label>
+			<input type="checkbox" id="pic-16"/>
+			<label for="pic-16" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486361_o.jpg"/></label>
+			<input type="checkbox" id="pic-17"/>
+			<label for="pic-17" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486436_o.jpg"/></label>
+			<input type="checkbox" id="pic-18"/>
+			<label for="pic-18" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486490_o.jpg"/></label>
+			<input type="checkbox" id="pic-19"/>
+			<label for="pic-19" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486550_o.jpg"/></label>
+			<input type="checkbox" id="pic-20"/>
+			<label for="pic-20" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486634_o.jpg"/></label>
+
+			<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+				<label for="pic-1" class="grid-item">
+					<div class="link-gallery">
+						<p>*Eagle*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485365_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-2" class="grid-item">
+					<div class="link-gallery">
+						<p>*American Eagle*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485278_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-3" class="grid-item">
+					<div class="link-gallery">
+						<p>*Dragon*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485465_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-4" class="grid-item">
+					<div class="link-gallery">
+						<p>*Metal Dragon*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485552_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-5" class="grid-item">
+					<div class="link-gallery">
+						<p>*Dragon on Stone*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485606_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-6" class="grid-item">
+					<div class="link-gallery">
+						<p>*Star of David*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485723_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-7" class="grid-item">
+					<div class="link-gallery">
+						<p>*Ship*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485798_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-8" class="grid-item">
+					<div class="link-gallery">
+						<p>*Lion on Globe*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485872_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-9" class="grid-item">
+					<div class="link-gallery">
+						<p>*Eagle on Globe*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485904_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-10" class="grid-item">
+					<div class="link-gallery">
+						<p>*Tiger*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485941_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-11" class="grid-item">
+					<div class="link-gallery">
+						<p>*Sherlock Holmes*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884485992_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-12" class="grid-item">
+					<div class="link-gallery">
+						<p>*Marine*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486062_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-13" class="grid-item">
+					<div class="link-gallery">
+						<p>*Metal Anchor*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486135_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-14" class="grid-item">
+					<div class="link-gallery">
+						<p>*Spider*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486248_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-15" class="grid-item">
+					<div class="link-gallery">
+						<p>*Dollar*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486305_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-16" class="grid-item">
+					<div class="link-gallery">
+						<p>*Euro*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486361_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-17" class="grid-item">
+					<div class="link-gallery">
+						<p>*St. Georg Pipe*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486436_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-18" class="grid-item">
+					<div class="link-gallery">
+						<p>*Tiger on Tree*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486490_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-19" class="grid-item">
+					<div class="link-gallery">
+						<p>*Metal Ship*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486550_o.jpg" />
+					</div>
+				</label>
+
+				<label for="pic-20" class="grid-item">
+					<div class="link-gallery">
+						<p>*Wild Boar*</p>
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884486634_o.jpg" />
+					</div>
+				</label>
+
+			</div>
+		</section>
+		<section id="content2">
+			<div class="block-title"></div>
+			<h2 class="head">Our Store</h2>
+			
+			<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+				<div class="link-store">
+					<p>*The First Class*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine/_i.html?_fsub=1303222014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353700_o.jpg" />
+					</a>
+					<small>The First Class Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Extra-Long*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Super-Hookah-Extra-Long_W0QQfsubZ2880445014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/663595380_o.jpg" />
+					</a>
+					<small>Extra - Long Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Super -Difficult*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Super-Difficult-Carving_W0QQfsubZ1303223014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353215_o.jpg" />
+					</a>
+					<small>Super (Difficult Carving) Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Fairy-Tale*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Fairy-Tale_W0QQfsubZ1303224014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/731467456_o.jpg" />
+					</a>
+					<small>Fairy-Tale Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Modern*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Modern-Incrustation_W0QQfsubZ1303225014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/487130240_o.jpg" />
+					</a>
+					<small>Modern & Incrustation Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Briar*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Briar-Smoking-Pipe_W0QQfsubZ8204240014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/811191172_o.jpg" />
+					</a>
+					<small>Briar Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Cigarette Holders*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Cigarette-Holders_W0QQfsubZ576095014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353227_o.jpg" />
+					</a>
+					<small>Cigarette Holders</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Holder Sets*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Cigarette-Holders_Holder-Sets-Lowest-Price_W0QQfsubZ1276459014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353233_o.jpg" />
+					</a>
+					<small>Vintage Cigarette Holder Sets</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Accessories*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Accessories_W0QQfsubZ21494913">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353219_o.jpg" />
+					</a>
+					<small>Accessories</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</section>
+		<section id="content3">
+			<div class="block-title"></div>
+			<h2 class="head">Payment Policy</h2>
+			<h4><strong>We only accept PayPal payments.</strong></h4>
+			<p><strong>For PayPal payments please go to PayPal</a></strong></p>
+		</section>
+		<section id="content4">
+			<div class="block-title"></div>
+			<h2 class="head">Shipping Policy</h2>
+			<p>We post items next business day after payment.
+			<p>International shipping by <strong>Ukrposhta (Registered Airmail Service)</strong> usually takes about <strong>10-14</strong> days to most countries, but in some cases delays can cause delivery times up to <strong>30</strong> days or even more.</p>
+			<p>We can not take responsibility for international shipments what are lost or delayed.</p>
+			<p>However, we will do everything we can to help trace shipment delayed more than 30 days.</p>
+		</section>
+		<section id="content5">
+			<div class="block-title"></div>
+			<h2 class="head">Return Policy</h2>
+			<p>If you are unhappy with your purchase for any reason, your item can be returned for a refund of your purchase price or for exchange.</p>
+			<p>You can return the item within 14 days from the delivery date.</p>
+			<p>Item must be in perfect condition.</p>
+			<p>Buyer pays the return postage cost.</p>
+			<p>Refund will be issued to your PayPal account.</p>
+		</section>
+		<section id="content6">
+			<div class="block-title"></div>
+			<h2 class="head">Feedback Policy</h2>
+			<p>PLEASE E-MAIL US BEFORE LEAVING NEGATIVE FEEDBACK, OR OPEN ANY DISPUTE ON eBAY, IT WILL JUST UPSET AND HURT BOTH SIDES.</p>
+			<p>All communications can be handled through email.</p>
+			<p>We strive to answer all emails as quickly as possible, but due to high e-mail volume it may take time for us to reply.</p>
+			<p>Thanks in advance for your patience.</p>
+			<p>All issues, if any appears, can be resolved in friendly manner.</p>
+			<h4><strong>We appreciate your positive eBay feedback.</strong></h4>
+			<h4><strong>If you are satisfied, please leave positive feedback for us.</strong></h4>
+		</section>
+	</div>
+	<div class="bgr-top"></div>
+</main>
