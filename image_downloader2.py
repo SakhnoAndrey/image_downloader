@@ -109,7 +109,7 @@ class ImageDownloader:
                 self.replace_div_p_switch_2()  # Task #9-10
                 self.replace_div_p_switch_3()  # Task #11-12
                 self.replace_checkbox_label_img()  # Task #13
-                self.replace_div_display_flex()  # Task #14-15
+                self.replace_div_display_flex()  # Task #14-15 and 17
                 self.div_our_store_section()  # Task #16
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
@@ -336,6 +336,7 @@ class ImageDownloader:
                 "style": "display: flex; flex-wrap: wrap; justify-content: center;"
             }
             self.replace_grid_item_link_gallery(tag_div_flex=tag_div)  # Task #15
+            self.replace_div_class_link_store(tag_div_flex=tag_div)  # Task #17
 
     # Task #15. Replace grid-item link-gallery
     def replace_grid_item_link_gallery(self, tag_div_flex):
@@ -379,6 +380,13 @@ class ImageDownloader:
 
     def div_our_store_section(self):
         self.div_to_section(name_section="Our Store")
+
+    # Task #17. Replace class link-store
+    def replace_div_class_link_store(self, tag_div_flex):
+        for tag_div in tag_div_flex.find_all(name="div", recursive=False):
+            for _ in tag_div.find_all(name="p", recursive=False):
+                _ = self.id
+                tag_div.attrs = {"class": "link-store"}
 
 
 # Initializing custom values for parsing
