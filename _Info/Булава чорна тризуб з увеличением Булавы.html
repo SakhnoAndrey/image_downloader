@@ -1,0 +1,594 @@
+
+<link href="https://pipes2go.com/upload/ebp/css/style_listing7.css" type="text/css" rel="stylesheet">
+<!--<link href="https://ebay.pipes/css/style_listing.css" type="text/css" rel="stylesheet">-->
+<meta https-equiv="Content-Type" content="text/html; charset=windows-1251">
+<style>
+	#wrapper {
+		width: 767px;
+		margin: 0 auto;
+	}
+
+	h2 {
+		color: #0000ff;
+	    font-size: 22pt;
+	    letter-spacing: 2px;
+	    text-align: center;
+	}
+
+	#ls_wrapper .ls_top_meny {
+		position: absolute;
+    	left: 50%;
+    	margin: 3px 0 0 -381px;
+	}
+
+	section {
+		display: none;
+		margin: 40px 0 40px 0;
+	}
+
+	input {
+	  display: none;
+	}
+
+	label {
+		display: inline-block;
+		padding: 0;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+	    color: #442500;
+	    font-size: 20px;
+	    font-family: Arial;
+	    font-weight: 700;
+	    text-shadow: 0px 1px 2px #f1e39e;
+	    cursor: pointer;
+	}
+
+	label:hover {
+	  text-decoration: underline;
+	}
+
+	.tab1 {margin: 6px 0 0 12px; width: 110px;}
+	.tab2 {margin: 0 0 0 19px; width: 93px;}
+	.tab3 {margin: 0 0 0 -2px; width: 90px;}
+	.tab4 {margin: 0 0 0 -8px; width: 93px;}
+	.tab5 {margin: 0 0 0 27px; width: 93px;}
+	.tab6 {margin: 0 0 0 17px; width: 93px;}
+	.tab7 {margin: 0 0 0 3px; width: 93px;}
+
+	.menu-head input:checked + label {
+	  color: #555;
+	  border: 1px solid #ddd;
+	  border-top: 2px solid orange;
+	  border-bottom: 1px solid #fff;
+	}
+
+	#tab1:checked ~ #content1,
+	#tab2:checked ~ #content2,
+	#tab3:checked ~ #content3,
+	#tab4:checked ~ #content4,
+	#tab5:checked ~ #content5,
+	#tab6:checked ~ #content6,
+	#tab7:checked ~ #content7 {
+	  display: block;
+	}
+
+	.ls_block_title_wrapper {
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_fill.png');
+		width: 875px;
+		height: 37px;
+    	margin: 0 0 0 -54px;
+    	padding: 9px 0 0 0;
+	}
+
+	.ls_block_title_wrapper:before {
+		content: '';
+		width: 16px;
+		height: 46px;
+		position: absolute;
+    	margin: -9px 0 0 -16px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_left.png');
+	}
+
+	.ls_block_title_wrapper span {
+		width: 211px;
+		display: inline-block;
+		color: #f1e39e;
+	    font-size: large;
+	    font-family: Verdana;
+	    letter-spacing: 1pt;
+	    text-align: left;
+	    font-weight: 700;
+	    text-shadow: 1px 1px 2px black;
+	}
+	.ls_block_title_wrapper:after {
+		content: '';
+		width: 16px;
+		height: 46px;
+		position: absolute;
+    	margin: -9px 0 0 664px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_right.png');
+	}
+
+	p {
+		font-family: Verdana;
+	    font-size: 1em;
+	    color: #252525;
+	    letter-spacing: 1.2px;
+	    line-height: 20px;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.up {
+		text-transform: uppercase;
+	}
+
+	.links-our-store, .links-gallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.links-our-store .links-body, .links-gallery .gallery-body{
+		width: 210px;
+	    margin: 20px 10px 0 0;
+	    text-align: center;
+	    border-top: 1px solid #996633;
+	    border-bottom: 1px solid #996633;
+	    border-left: 5px solid #996633;
+	    border-right: 5px solid #996633;
+	}
+
+	.links-gallery .gallery-body{
+		width: 170px;
+	    margin: 20px 10px 0 0;
+	}
+
+	.links-gallery .gallery-body{
+		width: 170px;
+	    height: 240px;
+	}
+
+	.links-our-store .links-body .links-body-title, .links-gallery .gallery-body .gallery-body-title{
+		background-color: #d9cece;
+		color: #996633;
+		font-size: 18px;
+		font-weight: bold;
+		padding: 3px 0 3px 0;
+	}
+
+	.links-gallery .gallery-body .gallery-body-title {
+		height: 42px;
+	}
+
+	.links-our-store .links-body a{
+		display: block;
+		width: 100%;
+		height: 184px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.links-gallery .gallery-body label {
+		display: block;
+		width: 100%;
+		height: 170px;
+	}
+
+	.links-gallery .gallery-body label img{
+		width: 170px;
+    	height: 170px;
+	}
+
+	.links-our-store .links-body .links-body-bottom, .links-gallery .gallery-body .gallery-body-bottom {
+		background-color: #d9cece;
+	    width: 100%;
+	    height: 19px;
+	    color: #996633;
+		font-size: 14px;
+		padding: 3px 0 0 0;
+	}
+
+
+
+
+	#content2 .lightbox {
+	  width: 100%;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	}
+
+	#content2 .lightbox {
+	  z-index: 1;
+	  min-height: 100%;
+	  overflow: auto;
+	  -webkit-transform: scale(0);
+	      -ms-transform: scale(0);
+	          transform: scale(0);
+	  -webkit-transition: -webkit-transform .5s ease-out;
+	          transition: transform .5s ease-out;
+	}
+
+	#content2 .lightbox img {
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  max-width: 96%;
+	  max-height: 96%;
+	  -webkit-transform: translate(-50%, -50%);
+	      -ms-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	}
+
+	#content2 input[type="checkbox"]:checked + .lightbox {
+	  -webkit-transform: scale(1);
+	      -ms-transform: scale(1);
+	          transform: scale(1);
+	}
+
+	#content2 input[type="checkbox"]:checked ~ .grid {
+	  opacity: .125;
+	}
+</style>
+<div id="ls_wrapper">
+	<div class="ls_bgr_wrapper"></div>
+	<div id="wrapper">
+		<img src="https://pipes2go.com/upload/ebp/img/top_img2.png" width="767px" height="501px" border="0">
+		<div class="ls_top_meny"></div>
+		<input id="tab1" type="radio" name="tabs" checked>
+		<label for="tab1" class="tab1">Item Description</label>
+		<input id="tab2" type="radio" name="tabs">
+		<label for="tab2" class="tab2">Pre-order items</label>
+		<input id="tab3" type="radio" name="tabs">
+		<label for="tab3" class="tab3">Our store</label>
+		<input id="tab4" type="radio" name="tabs">
+		<label for="tab4" class="tab4">Payment Policy</label>
+		<input id="tab5" type="radio" name="tabs">
+		<label for="tab5" class="tab5">Shipping Policy</label>
+		<input id="tab6" type="radio" name="tabs">
+		<label for="tab6" class="tab6">Return Policy</label>
+		<input id="tab7" type="radio" name="tabs">
+		<label for="tab7" class="tab7">Feedback Policy</label>
+
+		<section id="content1">
+			<div class="ls_block_title_wrapper">
+				<span>Item Description</span>
+			</div>
+			<h2>Carved Wooden Mace - Ukrainian Ancient Weapon BULAVA TRIDENT</h2>
+			<p>
+			<font face="Times New Roman" style="font-size: 14pt; letter-spacing: 2px">Hutsul carving is bright and peculiar phenomenon of Ukrainian national culture, which developed on ethnographic region in eastern Carpathia and includes the part of Pre-Carpathia, Bukovina and Zakarpattya. 
+			</font></p>
+		<p>
+		<font face="Times New Roman" style="font-size: 14pt; letter-spacing: 2px">Magic and fairy Carpathian nature, ancient believes, high esthetic's style of Hutsul people promoted appearing their special world outlook and rich fantasy, embodied in their monuments of national skill, especially in woodworking.</font></p>
+			<p><font face="Times New Roman" style="font-size: 14pt"><strong>Dear Customers!</strong></font></p>
+		<div style="color: rgb(68, 37, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: left; margin-left: 20px; margin-right: 30px; margin-top: 8px;">
+			<div style="text-align: center; margin-top: 10px;">
+				<p style="text-align: left;">
+				<font face="Times New Roman" style="font-size: 13pt;">To your 
+				attention there is an excellent symbol of Cossack authority –&nbsp;</font><b style="font-family: &quot;Times New Roman&quot;; font-size: 13pt;">Hand 
+				Carved Mace</b></div>
+		</div>
+		<p style="color: rgb(68, 37, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: left;">
+		<span style="font-family: &quot;Times New Roman&quot;;">
+		<span style="font-size: 13pt;">The first mace appeared in times of 
+			Zaporogian Sich and it was the symbol of sole authority in&nbsp;</span><font size="3">Ukraine</font><span style="font-size: 13pt;">.</span></span><span style="font-family: &quot;Times New Roman&quot;; font-size: small;">&nbsp;</span></p>
+			<p class="center up" style="font-family: 'Times New Roman'; font-size: 14pt;"><strong>BRAND NEW, NEVER USED!!!</strong></p>
+			<p style="font-family: Times New Roman;">
+			<span style="font-size: 14pt"><b>Mace</b></span><b><span style="font-size: 14pt"> dimensions</span></b><span style="font-size: 14pt">:</span></p>
+			<p style="color: rgb(68, 37, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: left;">
+			<font face="Times New Roman" style="font-size: 13pt;"><b>Length</b>&nbsp;~&nbsp;<strong><span lang="ru">18.5</span>&nbsp;inch</strong></font></p>
+		<p style="color: rgb(68, 37, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: left;">
+		<strong><font face="Times New Roman" style="font-size: 13pt;">Diameter 
+		of bowl&nbsp; ~&nbsp;<span lang="ru">3.3</span>4 inch</font></strong></p>
+			<p class="center" style="color: #b90505; font-family: 'Times New Roman'; font-size: 16pt;">Please note that color and shape may vary slightly from the picture.</p>
+			<p class="center" style="color: #b90505; font-family: 'Times New Roman'; font-size: 16pt;">Each item is handmade and slight variations may occur.</p>
+			<p style="color: rgb(68, 37, 0); font-family: Times; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+			<span style="font-size: 16pt; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 255);">
+			Bitte beachten Sie, dass Farbe und Schliff vom Bild variieren k&ouml;nnen.</span></p>
+		<p style="color: rgb(68, 37, 0); font-family: Times; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+		<span style="font-size: 16pt; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 255);">
+		Jedes Teil ist handgemacht und kann somit geringf&uuml;gige Abweichungen 
+		haben.</span></p>
+		<font face="Times New Roman" color="#008000" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; font-size: 16pt;">
+		<p style="text-align: center;">
+		<font color="#008000" face="Times New Roman">Si prega di notare che il 
+		colore e la forma pu&ograve; variare leggermente dalla foto.</font></p>
+		</font>
+		<p style="color: rgb(68, 37, 0); font-family: Times; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 1.33333px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+		<font face="Times New Roman" color="#008000" style="font-size: 16pt;">
+		Ogni pezzo &egrave; fatto a mano e pu&ograve; accadere piccole modifiche.</font></p>
+			<div style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: left; margin-left: 20px; margin-top: 8px;">
+				<div style="text-align: center; margin-top: 10px;">
+					<br class="Apple-interchange-newline">
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/835055449_o.jpg" height="254" width="649" style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px;"><p>
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/835055465_o.jpg" height="262" width="658" style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px;"></p>
+					<p>
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/835055482_o.jpg" height="298" width="669" style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px;"></p>
+					<p>
+					<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/835055505_o.jpg" height="1065" width="671" style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px;"></div>
+		</div>
+		<div style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; margin-top: 10px;">
+			&nbsp;&nbsp;<br>
+			<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/809571471_o.jpg" height="324" width="260" style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px;"></div>
+			<p class="center" style="font-size: 1.25em;"><strong>
+			<font face="Times New Roman">We</font></strong><font face="Times New Roman"><strong> using only high quality items, to suit Your style and individuality.</strong></font></p>
+			<p class="center" style="font-size: 1.25em;">
+			<font face="Times New Roman">You have an opportunity to order any
+			<span lang="en-us">mace</span> that You see on the photo 
+			in </font></p>
+		<p class="center" style="font-size: 1.25em;">
+		<font face="Times New Roman"><font color="#0000FF">
+		<span style="font-size: 18pt">Pre-order</span></font><font size="5" color="#0000FF"> 
+		items</font> menu.</font></p>
+			<p class="center" style="font-size: 1.275em; line-height: 28px;">
+			<font face="Times New Roman">You just need to write to us the number of the
+			<span lang="en-us">mace</span> (or send the picture) You would like to purchase, and we will tell You how long it will take to make this 
+			mace and the total price with shipping.</font></p>
+			
+		</section><!--/content1-->
+
+		<section id="content2">
+			<div class="ls_block_title_wrapper">
+				<span>Pre-order item</span>
+			</div>
+			<input type="checkbox" id="pic-1"/>
+			<label for="pic-1" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490282_o.jpg"/></label>
+			<input type="checkbox" id="pic-2"/>
+			<label for="pic-2" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490303_o.jpg"/></label>
+			<input type="checkbox" id="pic-3"/>
+			<label for="pic-3" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490323_o.jpg"/></label>
+			<input type="checkbox" id="pic-4"/>
+			<label for="pic-4" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490339_o.jpg"/></label>
+
+			<input type="checkbox" id="pic-5"/>
+			<label for="pic-5" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947933_o.jpg"/></label>
+			<input type="checkbox" id="pic-6"/>
+			<label for="pic-6" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947908_o.jpg"/></label>
+			<input type="checkbox" id="pic-7"/>
+			<label for="pic-7" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947954_o.jpg"/></label>
+			<input type="checkbox" id="pic-8"/>
+			<label for="pic-8" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947973_o.jpg"/></label>
+
+			<input type="checkbox" id="pic-9"/>
+			<label for="pic-9" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947788_o.jpg"/></label>
+			<input type="checkbox" id="pic-10"/>
+			<label for="pic-10" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947813_o.jpg"/></label>
+			<input type="checkbox" id="pic-11"/>
+			<label for="pic-11" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947846_o.jpg"/></label>
+			<input type="checkbox" id="pic-12"/>
+			<label for="pic-12" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947878_o.jpg"/></label>
+
+			<input type="checkbox" id="pic-13"/>
+			<label for="pic-13" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952550_o.jpg"/></label>
+			<input type="checkbox" id="pic-14"/>
+			<label for="pic-14" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952568_o.jpg"/></label>
+			<input type="checkbox" id="pic-15"/>
+			<label for="pic-15" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952589_o.jpg"/></label>
+			<input type="checkbox" id="pic-16"/>
+			<label for="pic-16" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952612_o.jpg"/></label>
+			
+		    <input type="checkbox" id="pic-17"/>
+			<label for="pic-17" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490355_o.jpg"/></label>
+			<input type="checkbox" id="pic-18"/>
+			<label for="pic-18" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881488017_o.jpg"/></label>
+			<input type="checkbox" id="pic-19"/>
+			<label for="pic-19" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881488022_o.jpg"/></label>
+			<input type="checkbox" id="pic-20"/>
+			<label for="pic-20" class="lightbox"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881488077_o.jpg"/></label>
+
+
+			<div class="links-gallery">
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Getmans*</div>
+					<label for="pic-1" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490282_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 044</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Big Trident*</div>
+					<label for="pic-2" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490303_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 045</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Sunflower Metal*</div>
+					<label for="pic-3" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490323_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 046</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Medium Trident*</div>
+					<label for="pic-4" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490339_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 047</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Medium Trident #2*</div>
+					<label for="pic-5" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947933_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 011</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Medium Trident #1*</div>
+					<label for="pic-6" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947908_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 009</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Small Trident #3*</div>
+					<label for="pic-7" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947954_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 013</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Small Trident #1*</div>
+					<label for="pic-8" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947973_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 014</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Trident + Stand*</div>
+					<label for="pic-9" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947788_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 044</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Big Stand*</div>
+					<label for="pic-10" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947813_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 004</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Big Trident #1*</div>
+					<label for="pic-11" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947846_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 005</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Big Trident #2*</div>
+					<label for="pic-12" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878947878_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 007</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Trident + Stand*</div>
+					<label for="pic-13" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952550_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 015</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Big diamond*</div>
+					<label for="pic-14" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952568_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 017</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Snake diamond*</div>
+					<label for="pic-15" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952589_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 018</div>
+				</div>
+				<div class="gallery-body">
+					<div class="gallery-body-title">*Petals*</div>
+					<label for="pic-16" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/878952612_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 019</div>
+				</div>
+								<div class="gallery-body">
+					<div class="gallery-body-title">*Leaf*</div>
+					<label for="pic-17" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881490355_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 048</div>
+				</div>
+								<div class="gallery-body">
+					<div class="gallery-body-title">*Small Leaf*</div>
+					<label for="pic-18" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881488017_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 031</div>
+				</div>
+								<div class="gallery-body">
+					<div class="gallery-body-title">*Small Coachman*</div>
+					<label for="pic-19" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881488022_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 032</div>
+				</div>
+								<div class="gallery-body">
+					<div class="gallery-body-title">*Round Metal*</div>
+					<label for="pic-20" class="grid-item"><img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/881488077_o.jpg"/></label>
+					<div class="gallery-body-bottom">Pre-order code: 040</div>
+				</div>
+			</div>
+		</section><!--/content2-->
+
+		<section id="content3">
+			<div class="ls_block_title_wrapper">
+				<span>Our Store</span>
+			</div>
+			<div class="links-our-store">
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675215_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675234_o.jpg');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675224_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675161_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675170_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675177_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675187_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675196_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+
+				<div class="links-body">
+					<div class="links-body-title">*Toys*</div>
+					<a href="" style="background-image: url('https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/848675202_o.png');"></a>
+					<div class="links-body-bottom"></div>
+				</div>
+			</div>
+		</section><!--/content3-->
+
+		<section id="content4">
+			<div class="ls_block_title_wrapper">
+				<span>Payment Policy</span>
+			</div>
+			<p class="center" style="font-size: 1.275em;"><strong>We only accept PayPal payments.</strong></p>
+			<p style="font-size: 1.275em;"><strong>For PayPal payments please go to PayPal</a></strong></p>
+		</section><!--/content4-->
+
+		<section id="content5">
+			<div class="ls_block_title_wrapper">
+				<span>Shipping Policy</span>
+			</div>
+			<p>We post items next business day after payment.</p>
+			<p>International shipping by <strong>Ukrposhta (Registered Airmail Service)</strong> usually takes about <strong>10-14</strong> days to most countries, but in some cases delays can cause delivery times up to <strong>30</strong> days or even more.</p>
+			<p>We can not take responsibility for international shipments what are lost or delayed.</p>
+			<p>However, we will do everything we can to help trace shipment delayed more than 30 days.</p>
+		</section><!--/content5-->
+
+		<section id="content6">
+			<div class="ls_block_title_wrapper">
+				<span>Return Policy</span>
+			</div>
+			<p>If you are unhappy with your purchase for any reason, your item can be returned for a refund of your purchase price or for exchange.</p>
+			<p>You can return the item within 14 days from the delivery date.</p>
+			<p>Item must be in perfect condition.</p>
+			<p>Buyer pays the return postage cost.</p>
+			<p>Refund will be issued to your PayPal account.</p>
+		</section><!--/content6-->
+
+		<section id="content7">
+			<div class="ls_block_title_wrapper">
+				<span>Feedback Policy</span>
+			</div>
+			<p class="up">PLEASE E-MAIL US BEFORE LEAVING NEGATIVE FEEDBACK, OR OPEN ANY DISPUTE ON eBAY, IT WILL JUST UPSET AND HURT BOTH SIDES.</p>
+			<p>All communications can be handled through email.</p>
+			<p>We strive to answer all emails as quickly as possible, but due to high e-mail volume it may take time for us to reply.</p>
+			<p>Thanks in advance for your patience.</p>
+			<p>All issues, if any appears, can be resolved in friendly manner.</p>
+			<p class="center"><strong>We appreciate your positive eBay feedback.</strong></p>
+			<p class="center"><strong>If you are satisfied, please leave positive feedback for us.</strong></p>
+		</section><!--/content7-->
+	</div><!--/wrapper-->
+	<div class="ls_bgr_wrapper"></div>
+</div><!--/ls_wrapper-->

@@ -33,10 +33,42 @@ def div_has_style_background_image(tag):
     return tag.name == "div" and tag.has_attr("style")
 
 
-def label_after_input(current_tag):
-    while current_tag is None or current_tag.name != "label":
+def next_tag_after_tag(current_tag, next_tag_name="label", tag_str=""):
+    name_starting_tag = current_tag.name
+    need_to_next = True
+    while need_to_next:
         current_tag = current_tag.nextSibling
+        if current_tag is None:
+            need_to_next = False
+        elif current_tag.name == name_starting_tag:
+            current_tag = None
+            need_to_next = False
+        elif current_tag.name == next_tag_name:
+            if tag_str == "":
+                need_to_next = False
+            else:
+                if current_tag.string != tag_str:
+                    current_tag = None
+                    need_to_next = False
+                else:
+                    need_to_next = False
     return current_tag
+
+
+def insert_tags_after_divdiv_to_section(tag):
+    current_tag = tag.nextSibling
+    while not (
+        current_tag.name == "div"
+        and current_tag.attrs == {}
+        and len(current_tag.contents) == 0
+    ):
+        next_tag = current_tag.nextSibling
+        extract_tag = current_tag.extract()
+        tag.append(extract_tag)
+        if next_tag is None:
+            break
+        else:
+            current_tag = next_tag
 
 
 class ImageDownloader:
@@ -58,6 +90,7 @@ class ImageDownloader:
         self.id = 1
         self.p_id = 1
         self.pic = 1
+        self.pic_display_flex = 1
         self.margin_top = 0
         self.list_ext = (
             ["jpg", "jpeg", "gif", "png", "bmp", "svg"]
@@ -92,11 +125,13 @@ class ImageDownloader:
                 self.replace_div_p_switch_2()  # Task #9-10
                 self.replace_div_p_switch_3()  # Task #11-12
                 self.replace_checkbox_label_img()  # Task #13
+                self.replace_div_display_flex()  # Task #14-15
+                self.div_our_store_section()  # Task #16
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
                 # self.parse_and_download_images_bs4() # STAGES #1
                 # Save content from BeautefulSoup
-                self.content = self.soup.prettify()
+                self.content = self.soup.prettify(formatter="html")
                 # Saving and closing source and goal html files
                 goal_file.write(self.content)
                 source_file.close()
@@ -260,7 +295,7 @@ class ImageDownloader:
                 recursive=False,
             ):
                 checked = "checked" in tag_input.attrs
-                tag_label = label_after_input(tag_input)
+                tag_label = next_tag_after_tag(tag_input)
                 tag_div.attrs = {
                     "class": ("" if name_switch == "t_switch" else "sub-") + "slider"
                 }
@@ -294,13 +329,13 @@ class ImageDownloader:
         self.replace_div_input_label(name_switch="p_switch_2")
 
     # Task #11-12. Replace div - radio - p_switch_3
-    def replace_div_p_switch_2(self):
+    def replace_div_p_switch_3(self):
         self.replace_div_input_label(name_switch="p_switch_3")
 
     # Task #13. Replace checkbox - label - image
     def replace_checkbox_label_img(self):
         for tag_input in self.soup.find_all(name="input", attrs={"type": "checkbox"}):
-            tag_label = label_after_input(tag_input)
+            tag_label = next_tag_after_tag(tag_input)
             tag_img_in_label = tag_label.find(name="img")
             if tag_img_in_label:
                 if tag_img_in_label["src"]:
@@ -308,6 +343,38 @@ class ImageDownloader:
                     tag_input.attrs = {"type": "checkbox", "id": name_pic}
                     tag_label.attrs = {"for": name_pic, "class": "lightbox"}
                     self.pic += 1
+
+    # Task #14. Replace display-flex
+    def replace_div_display_flex(self):
+        for tag_div in self.soup.find_all(name="div", attrs={"style": "display:flex"}):
+            tag_div.attrs = {
+                "style": "display: flex; flex-wrap: wrap; justify-content: center;"
+            }
+            self.replace_grid_item_link_gallery(tag_div_flex=tag_div)  # Task #15
+
+    # Task #15. Replace grid-item link-gallery
+    def replace_grid_item_link_gallery(self, tag_div_flex):
+        for tag_label in tag_div_flex.find_all(name="label"):
+            for tag_div in tag_label.find_all(name="div"):
+                for _ in tag_div.find_all(name="p"):
+                    pic_name = "pic_" + str(self.pic_display_flex)
+                    tag_label.attrs = {"for": pic_name, "class": "grid-item"}
+                    tag_div.attrs = {"class": "link-gallery"}
+
+    # Task #16. Div-Div Our Store to Section
+    def div_to_section(self, name_section="Our Store"):
+        for tag_div in self.soup.find_all("div", text="", attrs={}, recursive=True):
+            if tag_div.attrs == {} and len(tag_div.contents) == 0:
+                tag_h2 = next_tag_after_tag(
+                    tag_div, next_tag_name="h2", tag_str=name_section
+                )
+                if tag_h2 is not None:
+                    tag_div.name = "section"
+                    tag_div.attrs = {"id": "content2"}
+                    insert_tags_after_divdiv_to_section(tag_div)
+
+    def div_our_store_section(self):
+        self.div_to_section(name_section="Our Store")
 
 
 # Initializing custom values for parsing

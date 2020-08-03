@@ -1,0 +1,982 @@
+<style>
+	main {
+		min-width: 320px;
+		max-width: 100%;
+		padding: 0;
+		margin: 0 auto;
+		background-image: url('https://pipes2go.com/upload/ebp/img/bgr.png');
+	}
+
+	#wrapper {
+		width: 891px;
+		margin: 0 auto;
+	}
+
+	.bgr-top {
+		width: 100%;
+		height: 163px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/bgr_line.png');
+		background-repeat: repeat-x;
+	}
+
+	.bgr-menu {
+		width: 761px;
+		height: 55px;
+		position: absolute;
+    	margin: 3px 0 0 66px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/menu_bgr6.png');
+		background-repeat: repeat-x;
+	}
+
+	section {
+		display: none;
+		padding: 20px 0 0;
+	}
+
+	input {
+		display: none;
+	}
+
+	label {
+		float:left;
+		position: relative;
+   	 	z-index: 1;
+	    color: #442500;
+	    font-size: 20px;
+	    font-family: Arial;
+	    font-weight: 700;
+	    text-align: center;
+	    width: 115px;
+	    margin-top: 7px;
+	    text-shadow: 0px 1px 2px #f1e39e;
+	    cursor: pointer;
+	    border-bottom: 2px solid transparent;
+	}
+
+	label:hover {
+		text-decoration: underline;
+	}
+
+	input:checked + label {
+		color: #1f1101;
+	}
+
+	#tab1:checked ~ #content1,
+	#tab2:checked ~ #content2,
+	#tab3:checked ~ #content3,
+	#tab4:checked ~ #content4,
+	#tab5:checked ~ #content5,
+	#tab6:checked ~ #content6 {
+		display: block;
+	}
+
+	.block-title {
+		width: 96%;
+    	height: 34px;
+    	margin: 0 auto;
+    	padding: 12px 0 0 0;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_fill.png');
+		background-repeat: repeat-x;
+	}
+
+	.head {
+		color: #f1e39e;
+	    font-size: large;
+	    font-family: Verdana;
+	    text-align: left;
+	    font-weight: 700;
+	    text-shadow: 1px 1px 2px black;
+		position: absolute;
+    	margin: -35px 0 0 20px;
+	}
+
+	.block-title:before {
+		content: "";
+	    position: absolute;
+	    margin: -12px 0 0 -16px;
+	    width: 16px;
+	    height: 46px;
+	    background-image: url(https://pipes2go.com/upload/ebp/img/ls_bl_title_left.png);
+	    background-repeat: no-repeat;
+	}
+
+	.block-title:after {
+		content: "";
+		position: absolute;
+		margin: -12px 0 0 855px;
+		width: 16px;
+		height: 46px;
+		background-image: url('https://pipes2go.com/upload/ebp/img/ls_bl_title_right.png');
+		background-repeat: no-repeat;
+	}
+
+	h1 {
+		color: #442500;
+    	font-weight: normal;
+    	text-align: center;
+	}
+
+	h2 {
+		color: #442500;
+    	font-weight: bold;
+    	text-align: left;
+	}
+
+	h3 {
+		color: #442500;
+    	font-weight: bold;
+    	font-size: 16px;
+    	text-align: left;
+    	text-transform: uppercase;
+	}
+
+	h4 {
+		color: #442500;
+    	font-weight: normal;
+    	text-align: center;
+    	font-size: 21px;
+	}
+
+	p {
+		color: #442500;
+	    font-weight: normal;
+	    text-align: left;
+	    font-size: 19px;
+	    letter-spacing: 1px;
+	    line-height: 27px;
+	    font-family: Tahoma;
+	}
+
+	.red {
+		color: #b90303;
+	}
+
+	.green {
+		color: green;
+	}
+
+	.blue {
+		color: blue;
+	}
+
+	.link-store {
+	    width: 200px;
+	    margin: 20px;
+	    background-color: #d9cece;
+	    border-top: 1px solid #663333;
+	    border-bottom: 1px solid #663333;
+	    border-left: 6px solid #663333;
+	    border-right: 6px solid #663333;
+	}
+
+	.link-store img {
+		max-width: 100%;
+		width: 200px;
+		height: 160px;
+		margin-bottom: 8px;
+	}
+
+	.link-store p {
+		font-weight: bold;
+	    font-family: verdana, sans serif;
+	    background-color: #d9cece;
+	    color: #663333;
+	    text-align: center;
+	    font-size: 16px;
+	    height: 20px;
+	    margin: 17px 0 0 0;
+	    padding: 0;
+	    line-height: 0px;
+	}
+
+	.link-store small {
+		width: 135px;
+		color: #333333;
+	    text-align: left;
+	    margin: 0 5px 0 10px;
+	    font-size: 12px;
+	    float: left;
+	}
+
+	.link-store small {
+		width: 135px;
+		color: #333333;
+	    text-align: left;
+	    margin: 0 5px 0 10px;
+	    font-size: 12px;
+	    float: left;
+	}
+
+	.link-store .link {
+		width: 30px;
+    	height: 30px;
+	}
+	
+</style>
+
+
+<main>
+	<div class="bgr-top"></div>
+	<div id="wrapper">
+		<img src="https://pipes2go.com/upload/ebp/img/top_img2.png" width="767px" height="501px" border="0" style="margin: 0 auto; display: block;">
+		<div style="clear: both;"></div>
+
+		<div class="bgr-menu"></div>
+		<input id="tab1" type="radio" name="tabs" checked>
+		<label for="tab1" style="margin-left: 73px;">Item Description</label>
+		<input id="tab2" type="radio" name="tabs">
+		<label for="tab2" style="margin: 16px 0 0 7px;">Our store</label>
+		<input id="tab3" type="radio" name="tabs">
+		<label for="tab3" style="margin-left: 8px;">Payment Policy</label>
+		<input id="tab4" type="radio" name="tabs">
+		<label for="tab4" style="margin-left: 11px;">Shipping Policy</label>
+		<input id="tab5" type="radio" name="tabs">
+		<label for="tab5" style="margin-left: 21px;">Return Policy</label>
+		<input id="tab6" type="radio" name="tabs">
+		<label for="tab6" style="margin-left: 12px;">Feedback Policy</label>
+		<div style="clear: both;"></div>
+		
+
+		<section id="content1">
+			<div class="block-title"></div>
+			<h2 class="head">Item Description</h2>
+		<font face="Times">
+		</font>
+		<p class="MsoNormal" style="text-align: center" align="center">
+		<font size="5" face="Times New Roman">HAND CARVED Tobacco Smoking Pipe
+		<b>*For Choice*</b></font></p>
+		<div class="ls_block_body">
+			<font face="Times">
+			<p style="text-align: left">
+			<span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Times New Roman">Brand new, 
+			never used stylish tobacco smoking pipe. Royal quality. </font>
+			</span></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			Neue, ungebrauchte stylische Tabakpfeife in k&ouml;niglicher Qualit&auml;t.</span><span style="color: black; line-height: 115%"><font style="font-size: 11pt" face="Times New Roman"><br>
+			<br>
+			Our pipes are made of an environmentally friendly pear wood, dried 
+			in a natural condition for at least 2 years.</font></span></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			Unsere Pfeifen sind aus einem umweltfreundlichen Birnenholz gemacht 
+			und unter nat&uuml;rlichen Bedingungen &uuml;ber zwei Jahre getrocknet.</span></p>
+			<p style="text-align: left">
+			<span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Times New Roman">For toning 
+			tubes we use high-quality alcohol wood stains.&nbsp;&nbsp;&nbsp; </font></span>
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			F&uuml;r gef&auml;rbte Pfeifen benutzen wir qualitativ hochwertige F&auml;rbungen 
+			auf Alkoholbasis. </span></p>
+			<p style="text-align: left">
+			<span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Times New Roman"><br>
+			The final polishing with refined carnauba wax, that will allow You 
+			to polish the pipe with a soft cloth, when it is necessary. It will 
+			help You to re-establish its original look. <br>
+			&nbsp;</font></span></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			F&uuml;r die Endpolitur wird ein feiner Wachs der Carnauba-Palme benutzt, 
+			dies erm&ouml;glicht es, die Pfeife mit einem weichen Glanz zu polieren, 
+			wenn es notwendig ist. Diese Politur erlaubt es, den nat&uuml;rlichen 
+			Glanz des Holzes wieder herzustellen.</span></p>
+			<p style="text-align: left">
+			<span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Times New Roman"><br>
+			</font></span><font style="font-size: 11pt" face="Times New Roman">
+			The bowl is the main part of a good pipe and it's carefully hand 
+			crafted by Ukrainian artists. Signed by artist.</font><span style="color: black; line-height: 115%"><font style="font-size: 11pt" face="Times New Roman">
+			</font></span>
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			Der Pfeifenkopf ist der Hauptteil einer guten Pfeife und dieser ist 
+			sorgf&auml;ltig von ukrainischen K&uuml;nstlern handverziert und vom K&uuml;nstler 
+			signiert. </span><span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Times New Roman"><br>
+			<br>
+			Great Buy for the Connoisseur.<br>
+			&nbsp;</font></span></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			Ein gro&szlig;artiger Kauf f&uuml;r einen Kenner. </span></p>
+			<p style="text-align: left">
+			<span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Times New Roman"><br>
+			</font></span><font style="font-size: 11pt" face="Times New Roman">
+			It would make a stylish gift or a great addition to your collection.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</font></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			Dies w&auml;re ein tolles, modernes Geschenk oder eine gro&szlig;artige 
+			Bereicherung Ihrer Sammlung. </span>
+			<span style="color: black; line-height: 115%">
+			<font style="font-size: 11pt" face="Tahoma"><br>
+			<br>
+			</font><font style="font-size: 11pt" face="Times New Roman">For 
+			wholesale buyers we are offering big discounts! </font></span></p>
+			<p style="text-align: left">
+			<span style="font-size: 11pt; font-family: Times New Roman; color: #1f497d">
+			F&uuml;r Gro&szlig;h&auml;ndler bieten wir hohe Rabatte an!</span></p>
+			</font>
+			<p class="MsoNormal" style="text-align: justify; line-height: 150%" align="center">
+			<font size="3" face="Times New Roman"><strong>BRAND NEW NEVER USED!!!</strong></font></p>
+			<div style="margin-left: 20px; margin-right: 30px; margin-top: 8px">
+				<font face="Times">
+				<div style="text-align: center">
+					<div style="text-align: center">
+						<div style="text-align: center; margin-top: 10px">
+							<div style="text-align: center; margin-top: 10px">
+								<p class="MsoNormal" style="text-align: justify; line-height: 150%" align="center">&nbsp;</p>
+								<div style="margin-left: 20px; margin-right: 30px; margin-top: 8px">
+									<div style="text-align: center">
+										<div style="text-align: center">
+											<div style="text-align: center; margin-top: 10px">
+												<div style="text-align: center; margin-top: 10px">
+													<div style="text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; -webkit-text-stroke-width: 0px; margin-left: 20px; margin-right: 30px; margin-top: 8px">
+														<div style="text-align: center">
+															<div style="text-align: left; margin-left: 20px; margin-right: 30px; margin-top: 8px">
+																<div align="center">
+																	<table style="border-collapse: collapse; width: 674px; border-width: 0px" height="195" cellspacing="0" cellpadding="0" bordercolor="#000000" border="3">
+																		<tr style="height: 20.25pt" height="27">
+																			<td style="height: 20.25pt; width: 243pt; color: black; font-size: 16.0pt; font-weight: 700; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="324" height="27">
+																			<span style="line-height: 115%">
+																			Pipe 
+																			dimensions:</span></td>
+																			<td style="width: 347px; color: #1F497D; font-size: 16.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center">
+																			Pfeifenabmessungen:</td>
+																		</tr>
+																		<tr style="height: 27.75pt" height="37">
+																			<td style="height: 27.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="37">
+																			Length 
+																			~ 
+																			7.25 
+																			inch</td>
+																			<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																			<span style="letter-spacing: 1pt">
+																			L&auml;nge 
+																			~ 
+																			7.25 
+																			inch.</span></td>
+																		</tr>
+																		<tr style="height: 27.75pt" height="37">
+																			<td style="height: 27.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="37">
+																			<span style="letter-spacing: 1pt">
+																			Height 
+																			of 
+																			bowl 
+																			~ 
+																			2.6 
+																			inch.</span></td>
+																			<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																			<span style="letter-spacing: 1pt">
+																			L&auml;nge 
+																			/ 
+																			Gr&ouml;&szlig;e 
+																			des 
+																			Pfeifenkopfes 
+																			~ 
+																			2.6 
+																			inch.</span></td>
+																		</tr>
+																		<tr style="height: 15.75pt" height="21">
+																			<td style="height: 15.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="21">
+																			Width 
+																			of 
+																			bowl 
+																			~ 
+																			1.7 
+																			inch.</td>
+																			<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																			Breite 
+																			des 
+																			Pfeifenkopfes 
+																			~ 
+																			1.7 
+																			inch.</td>
+																		</tr>
+																		<tr style="height: 15.75pt" height="21">
+																			<td style="height: 15.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="21">
+																			<span style="letter-spacing: 1pt">
+																			Inside 
+																			bowl 
+																			diameter 
+																			~ 
+																			0.7 
+																			inch.</span></td>
+																			<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																			<span style="letter-spacing: 1pt">
+																			Innendurchmesser 
+																			des 
+																			Pfeifenkopfes 
+																			~ 
+																			0.64 
+																			inch.</span></td>
+																		</tr>
+																		<tr style="height: 15.75pt" height="21">
+																			<td style="height: 15.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="21">
+																			Inside 
+																			height 
+																			of 
+																			bowl 
+																			~ 
+																			1.7 
+																			inch.</td>
+																			<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																			<span style="letter-spacing: 1pt">
+																			Innenl&auml;nge 
+																			des 
+																			Pfeifenkopfes 
+																			~ 
+																			1.7 
+																			inch.</span></td>
+																		</tr>
+																		<tr style="height: 24.0pt" height="32">
+																			<td style="height: 31px; color: #290504; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+																			<span style="letter-spacing: 1pt">
+																			For 
+																			9mm 
+																			filter</span></td>
+																			<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347" height="31">
+																			<span style="font-family: Times New Roman; font-size: small; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px">
+																			Pfeife 
+																			mit 
+																			9 mm 
+																			Filtereinsatz</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="color: rgb(0, 0, 0); font-family: Times New Roman; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-align: left; margin-left: 20px; margin-right: 30px; margin-top: 8px">
+														<span style="text-align: center">
+														<font size="2" face="tahoma">
+														<b><br>
+														&nbsp;</b></font></span><div align="center">
+															<table style="border-collapse: collapse; width: 674px; border-width: 0px" height="195" cellspacing="0" cellpadding="0" bordercolor="#000000" border="3">
+																<colgroup>
+																	<col style="width: 243pt" width="324">
+																	<col style="width: 230pt" width="307">
+																</colgroup>
+																<tr style="height: 20.25pt" height="27">
+																	<td style="height: 20.25pt; width: 243pt; color: black; font-size: 16.0pt; font-weight: 700; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="324" height="27">
+																	<span style="line-height: 115%">
+																	Pipe 
+																	dimensions 
+																	for Mammoth 
+																	pipe:</span></td>
+																	<td style="width: 347px; color: #1F497D; font-size: 16.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center">
+																	Pfeifenabmessungen 
+																	Mammut:</td>
+																</tr>
+																<tr style="height: 27.75pt" height="37">
+																	<td style="height: 27.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="37">
+																	Length ~ 6.4 
+																	inch</td>
+																	<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																	<span style="letter-spacing: 1pt">
+																	L&auml;nge ~ 6.4 
+																	inch.</span></td>
+																</tr>
+																<tr style="height: 27.75pt" height="37">
+																	<td style="height: 27.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="37">
+																	<span style="letter-spacing: 1pt">
+																	Height of 
+																	bowl ~ 2.8 
+																	inch.</span></td>
+																	<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																	<span style="letter-spacing: 1pt">
+																	L&auml;nge / 
+																	Gr&ouml;&szlig;e des 
+																	Pfeifenkopfes 
+																	~ 2.8 inch.</span></td>
+																</tr>
+																<tr style="height: 15.75pt" height="21">
+																	<td style="height: 15.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="21">
+																	Width of 
+																	bowl ~ 1.8 
+																	inch.</td>
+																	<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																	Breite des 
+																	Pfeifenkopfes 
+																	~ 1.8 inch.</td>
+																</tr>
+																<tr style="height: 15.75pt" height="21">
+																	<td style="height: 15.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="21">
+																	<span style="letter-spacing: 1pt">
+																	Inside bowl 
+																	diameter ~ 
+																	0.7 inch.</span></td>
+																	<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																	<span style="letter-spacing: 1pt">
+																	Innendurchmesser 
+																	des 
+																	Pfeifenkopfes 
+																	~ 0.7 inch.</span></td>
+																</tr>
+																<tr style="height: 15.75pt" height="21">
+																	<td style="height: 15.75pt; color: #290504; font-size: 12.0pt; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" height="21">
+																	Inside 
+																	height of 
+																	bowl ~ 2.2 
+																	inch.</td>
+																	<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347">
+																	<span style="letter-spacing: 1pt">
+																	Innenl&auml;nge 
+																	des 
+																	Pfeifenkopfes 
+																	~ 2.2 inch.</span></td>
+																</tr>
+																<tr style="height: 24.0pt" height="32">
+																	<td style="height: 31px; color: #290504; font-family: 'Times New Roman', serif; text-align: center; vertical-align: middle; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+																	<span style="letter-spacing: 1pt">
+																	For direct 
+																	smoking</span></td>
+																	<td style="color: #1F497D; font-size: 12.0pt; font-family: 'Times New Roman', serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="347" height="31">
+																	Zum directen 
+																	Raucher</td>
+																</tr>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p>&nbsp;&nbsp;</div>
+				</div>
+				</font>
+				<div style="text-align: center">
+					<font face="Times">
+					<div style="text-align: left; margin-left: 20px; margin-right: 30px; margin-top: 8px">
+						<div style="text-align: center; margin-top: 10px">
+							<p style="text-align: center">
+							<span style="color: rgb(255, 0, 0); line-height: 115%">
+							<font style="font-size: 16pt">Please note that color 
+							and shape may vary slightly from the picture. </font>
+							</span></p>
+							<p style="text-align: center">
+							<span style="color: rgb(255, 0, 0); line-height: 115%">
+							<font style="font-size: 16pt">Each item is handmade 
+							and slight variations may occur. </font></span></p>
+							<p style="text-align: center">
+							<span style="font-size: 16pt; font-family: Times New Roman; color: #0000FF">
+							Bitte beachten Sie, dass Farbe und Schliff vom Bild 
+							variieren k&ouml;nnen.</span></p>
+							<p style="text-align: center">
+							<span style="font-size: 16pt; font-family: Times New Roman; color: #0000FF">
+							Jedes Teil ist handgemacht und kann somit 
+							geringf&uuml;gige Abweichungen haben. </span></p>
+							<font style="font-size: 16pt" face="Times New Roman" color="#008000">
+							<p style="text-align: center"><font color="#008000">
+							Si prega di notare che il colore e la forma pu&ograve; 
+							variare leggermente dalla foto.</font></p>
+							</font>
+							<p style="text-align: center">
+							<font style="font-size: 16pt" face="Times New Roman" color="#008000">
+							Ogni pezzo &egrave; fatto a mano e pu&ograve; accadere piccole 
+							modifiche.</font></div>
+					</div>
+					</font></div>
+			</div>
+			<b>&nbsp;</b>
+												
+											</div>
+		<div style="text-align: center; margin-top: 10px">
+			<div style="text-align: center; margin-top: 10px">
+				<font face="Times">
+				<div style="text-align: center; margin-top: 10px">
+					<div style="text-align: center; margin-top: 10px">
+						<div style="text-align: center; margin-top: 10px">
+							<div style="text-align: center; margin-top: 10px">
+								<div style="text-align: center; margin-top: 10px">
+									<div style="text-align: center; margin-top: 10px">
+										<div style="text-align: center; margin-top: 10px">
+											<div style="text-align: center; margin-top: 10px">
+												<div style="text-align: center; margin-top: 10px">
+													<div style="text-align: center; margin-top: 10px">
+														<div style="text-align: center; margin-top: 10px">
+															<div style="text-align: center; margin-top: 10px">
+																<div style="text-align: center; margin-top: 10px">
+																	<div style="text-align: center; margin-top: 10px">
+																		<div style="text-align: center; margin-top: 10px">
+																			<div style="text-align: center; margin-top: 10px">
+																				<div style="text-align: center; margin-top: 10px">
+																					<div style="text-align: center; margin-top: 10px">
+																						<div style="text-align: center; margin-top: 10px">
+																							<div style="text-align: center; margin-top: 10px">
+																								<div style="text-align: center; margin-top: 10px">
+																									<div style="text-align: center; margin-top: 10px">
+																										<font classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="font-family: Arial" rwr="1" size="2">
+																										<div style="text-align: center; margin-top: 10px">
+																											<div style="text-align: center; margin-top: 10px">
+																												<div style="text-align: center; margin-top: 10px">
+																													<div style="text-align: center; margin-top: 10px">
+																														<div style="text-align: center; margin-top: 10px">
+																															<div style="text-align: center; margin-top: 10px">
+																																<div style="text-align: center; margin-top: 10px">
+																																	<div style="text-align: center; margin-top: 10px">
+																																		<div style="text-align: center; margin-top: 10px">
+																																			<div style="text-align: center; margin-top: 10px">
+																																				<div style="text-align: center; margin-top: 10px">
+																																					<div style="text-align: center; margin-top: 10px">
+																																						<div style="text-align: center; margin-top: 10px">
+																																							<div style="text-align: center; margin-top: 10px">
+																																								<div style="text-align: center; margin-top: 10px">
+																																									<div style="text-align: center; margin-top: 10px">
+																																										<div style="text-align: center; margin-top: 10px">
+																																											<div style="text-align: center; margin-top: 10px">
+																																												<div style="text-align: center; margin-top: 10px">
+																																													<div style="text-align: center; margin-top: 10px">
+																																														<div style="text-align: center; margin-top: 10px">
+																																															<div style="text-align: center; margin-top: 10px">
+																																																<div style="text-align: center; margin-top: 10px">
+																																																	<div style="text-align: center; margin-top: 10px">
+																																																		<div style="text-align: center; margin-top: 10px">
+																																																			<div style="text-align: center; margin-top: 10px">
+																																																				<div style="text-align: center; margin-top: 10px">
+																																																					<div style="text-align: center; margin-top: 10px">
+																																																						<div style="text-align: center; margin-top: 10px">
+																																																							<div style="text-align: center; margin-top: 10px">
+																																																								<div style="text-align: center; margin-top: 10px">
+																																																									<div style="text-align: center; margin-top: 10px">
+																																																										<div style="text-align: center; margin-top: 10px">
+																																																											<div style="text-align: center; margin-top: 10px">
+																																																												<div style="text-align: center; margin-top: 10px">
+																																																													<div style="text-align: center; margin-top: 10px">
+																																																														<div style="text-align: center; margin-top: 10px">
+																																																															<div style="text-align: center; margin-top: 10px">
+																																																																<div style="text-align: center; margin-top: 10px">
+																																																																	<div style="text-align: center; margin-top: 10px">
+																																																																		<div style="text-align: center; margin-top: 10px">
+																																																																			<div style="text-align: center; margin-top: 10px">
+																																																																				<div style="text-align: center; margin-top: 10px">
+																																																																					<div style="text-align: center; margin-top: 10px">
+																																																																						<div style="text-align: center; margin-top: 10px">
+																																																																							<div style="text-align: center; margin-top: 10px">
+																																																																								<div style="text-align: center; margin-top: 10px">
+																																																																									<div style="text-align: center; margin-top: 10px">
+																																																																										<div style="text-align: center; margin-top: 10px">
+																																																																											<div style="text-align: center; margin-top: 10px">
+																																																																												<div style="text-align: center; margin-top: 10px">
+																																																																													<div style="text-align: center; margin-top: 10px">
+																																																																														<div style="text-align: center; margin-top: 10px">
+																																																																															<div style="text-align: center; margin-top: 10px">
+																																																																																<div style="text-align: center; margin-top: 10px">
+																																																																																	<div style="text-align: center; margin-top: 10px">
+																																																																																		<div style="text-align: center; margin-top: 10px">
+																																																																																			<div style="text-align: center; margin-top: 10px">
+																																																																																				<div style="text-align: center; margin-top: 10px">
+																																																																																					<div style="text-align: center; margin-top: 10px">
+																																																																																						<div style="text-align: center; margin-top: 10px">
+																																																																																							<p style="text-align: center"><em><font style="font-size: x-large" face="Arial" color="#007e46">&nbsp;</font></em><b><em style="font-style: normal"><font style="font-size: x-large" face="Times New Roman"> </font><font style="font-size: 15pt" face="Times New Roman">&nbsp;Model&nbsp;<span lang="uk">1&nbsp; *</span> Anchor <span lang="uk">*</span></font></em><font style="font-size: 15pt" face="Times New Roman">&nbsp;&nbsp; </font></b>&nbsp;&nbsp;</p>
+																																																																																							<p style="text-align: center"><img style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/940828755_o.jpg" width="725" height="407"></p>
+																																																																																							<div style="text-align: center; margin-top: 10px">
+																																																																																								<img style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/940828764_o.jpg" width="735" height="533">
+																																																																																							</div>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">2</span> * Dragon *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909168_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909170_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">3</span> * Claw *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909186_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909192_o.jpg"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909181_o.jpg" width="503" height="877"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">4</span> * Eagle<span lang="uk"> </span>*</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909116_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909120_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/1/7/9/0/2/5/4/webimg/716380876_o.jpg" width="500" height="361"></p>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">5</span> * Mammoth *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909233_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909241_o.jpg"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909245_o.jpg"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">6</span> * Panther *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909130_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909136_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">7</span> * Tiger *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909148_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909155_o.jpg"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909161_o.jpg"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">8</span> * Eagle on Globe *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909092_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909105_o.jpg" width="661" height="498"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909109_o.jpg" width="668" height="440"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">9</span> * Ship *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909197_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909201_o.jpg"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909206_o.jpg"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">10</span> * Lion on Globe *<span lang="uk">&nbsp;</span></font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909212_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909219_o.jpg"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909228_o.jpg"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">11</span> *<span lang="uk">D</span>ragon on Stone *</font></em></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909065_o.jpg"></font></em></font></p>
+																																																																																							<p style="text-align: center"><font size="4"><em><font face="Arial"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909072_o.jpg"></font></em></font></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/531909077_o.jpg"><p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">12</span> * Lion Head *<span lang="uk">&nbsp;</span></font></em></p>
+																																																																																							<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/1/7/9/0/2/5/4/webimg/747908578_o.jpg" width="708" height="706"><p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/1/7/9/0/2/5/4/webimg/747908600_o.jpg" width="712" height="674"></p>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">13</span> * Metal Dragon *</font></em></p>
+																																																																																							<p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884468169_o.jpg" width="708" height="419"></p>
+																																																																																							<p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/884468217_o.jpg" width="696" height="434"></p>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">1</span>4<span lang="uk"> </span>* Metal Anchor *</font></em></p>
+																																																																																							<div style="text-align: center; margin-top: 10px">
+																																																																																								<img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/1/7/9/0/2/5/4/webimg/749477910_o.jpg" width="697" height="391"><p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/1/7/9/0/2/5/4/webimg/749477951_o.jpg" width="699" height="395"></p>
+																																																																																								<p style="text-align: center"><img style="border: 1px solid #909090; margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/1/7/9/0/2/5/4/webimg/749477961_o.jpg" width="704" height="409"></div>
+																																																																																							<p style="text-align: center"><em style="font-style: normal"><font style="font-size: 15pt; font-weight: 700" face="Times New Roman">Model&nbsp;<span lang="uk">15</span> * Spider *</font></em></p>
+																																																																																							<div style="text-align: center">
+																																																																																								<div style="text-align: center; margin-top: 10px">
+																																																																																									<img style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/910255250_o.jpg" width="707" height="872">
+																																																																																									<p style="text-align: center"><img style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/910255273_o.jpg" width="722" height="483"> </p>
+																																																																																									<p style="text-align: center"><img style="border: 1px solid rgb(144, 144, 144); margin-top: 10px; margin-bottom: 20px" src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/910255287_o.jpg" width="730" height="428"></div>
+																																																																																							</div>
+																																																																																						</div>
+																																																																																					</div>
+																																																																																				</div>
+																																																																																			</div>
+																																																																																		</div>
+																																																																																	</div>
+																																																																																</div>
+																																																																															</div>
+																																																																														</div>
+																																																																													</div>
+																																																																												</div>
+																																																																											</div>
+																																																																										</div>
+																																																																									</div>
+																																																																								</div>
+																																																																							</div>
+																																																																						</div>
+																																																																					</div>
+																																																																				</div>
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																</div>
+																																																															</div>
+																																																														</div>
+																																																													</div>
+																																																												</div>
+																																																											</div>
+																																																										</div>
+																																																									</div>
+																																																								</div>
+																																																							</div>
+																																																						</div>
+																																																					</div>
+																																																				</div>
+																																																			</div>
+																																																		</div>
+																																																	</div>
+																																																</div>
+																																															</div>
+																																														</div>
+																																													</div>
+																																												</div>
+																																											</div>
+																																										</div>
+																																									</div>
+																																								</div>
+																																							</div>
+																																						</div>
+																																					</div>
+																																				</div>
+																																			</div>
+																																		</div>
+																																	</div>
+																																</div>
+																															</div>
+																														</div>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																										</font></div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</font></div>
+		</div>
+		<h4 style="font-weight: bold">By using only high quality woods, to suit Your style and individuality.</h4>
+			<h4 class="blue">Durch das Verarbeiten von Holz mit h&ouml;chster Qualit&auml;t bestimmst Du Deinen eigenen Stil und Individualit&auml;t.</h4>
+			<h4 class="green">Se si utilizza solo legno di alta qualità, per soddisfare il vostro stile e personalità.</h4>
+		</section>
+		<section id="content2">
+			<div class="block-title"></div>
+			<h2 class="head">Our Store</h2>
+			
+			<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+				<div class="link-store">
+					<p>*The First Class*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine/_i.html?_fsub=1303222014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353700_o.jpg" />
+					</a>
+					<small>The First Class Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Extra-Long*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Super-Hookah-Extra-Long_W0QQfsubZ2880445014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/663595380_o.jpg" />
+					</a>
+					<small>Extra - Long Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Super -Difficult*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Super-Difficult-Carving_W0QQfsubZ1303223014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353215_o.jpg" />
+					</a>
+					<small>Super (Difficult Carving) Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Fairy-Tale*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Fairy-Tale_W0QQfsubZ1303224014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/731467456_o.jpg" />
+					</a>
+					<small>Fairy-Tale Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Modern*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Author-s-Signature_Modern-Incrustation_W0QQfsubZ1303225014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/487130240_o.jpg" />
+					</a>
+					<small>Modern & Incrustation Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Briar*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Briar-Smoking-Pipe_W0QQfsubZ8204240014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/811191172_o.jpg" />
+					</a>
+					<small>Briar Smoking Pipes</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Cigarette Holders*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Cigarette-Holders_W0QQfsubZ576095014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353227_o.jpg" />
+					</a>
+					<small>Cigarette Holders</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Holder Sets*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Cigarette-Holders_Holder-Sets-Lowest-Price_W0QQfsubZ1276459014">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353233_o.jpg" />
+					</a>
+					<small>Vintage Cigarette Holder Sets</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+
+				<div class="link-store">
+					<p>*Accessories*</p>
+					<a href="https://stores.ebay.com/Favourite-Ukraine_Smoking-Pipes_Accessories_W0QQfsubZ21494913">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815353219_o.jpg" />
+					</a>
+					<small>Accessories</small>
+					<a href="https://stores.ebay.com/Favourite-Ukraine?_trksid=p2047675.l2563">
+						<img src="https://img.auctiva.com/imgdata/8/4/0/3/3/0/webimg/815355468_o.gif" class="link" height="30" vspace="4" width="30" border="0">
+					</a>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</section>
+		<section id="content3">
+			<div class="block-title"></div>
+			<h2 class="head">Payment Policy</h2>
+			<h4><strong>We only accept PayPal payments.</strong></h4>
+			<p><strong>For PayPal payments please go to   <a href="https://www.paypal.com" target="_blank">www.PayPal.com</a></strong></p>
+		</section>
+		<section id="content4">
+			<div class="block-title"></div>
+			<h2 class="head">Shipping Policy</h2>
+			<p>We post items next business day after payment.
+			<p>International shipping by <strong>Ukrposhta (Registered Airmail Service)</strong> usually takes about <strong>10-14</strong> days to most countries, but in some cases delays can cause delivery times up to <strong>30</strong> days or even more.</p>
+			<p>We can not take responsibility for international shipments what are lost or delayed.</p>
+			<p>However, we will do everything we can to help trace shipment delayed more than 30 days.</p>
+		</section>
+		<section id="content5">
+			<div class="block-title"></div>
+			<h2 class="head">Return Policy</h2>
+			<p>If you are unhappy with your purchase for any reason, your item can be returned for a refund of your purchase price or for exchange.</p>
+			<p>You can return the item within 14 days from the delivery date.</p>
+			<p>Item must be in perfect condition.</p>
+			<p>Buyer pays the return postage cost.</p>
+			<p>Refund will be issued to your PayPal account.</p>
+		</section>
+		<section id="content6">
+			<div class="block-title"></div>
+			<h2 class="head">Feedback Policy</h2>
+			<p>PLEASE E-MAIL US BEFORE LEAVING NEGATIVE FEEDBACK, OR OPEN ANY DISPUTE ON eBAY, IT WILL JUST UPSET AND HURT BOTH SIDES.</p>
+			<p>All communications can be handled through email.</p>
+			<p>We strive to answer all emails as quickly as possible, but due to high e-mail volume it may take time for us to reply.</p>
+			<p>Thanks in advance for your patience.</p>
+			<p>All issues, if any appears, can be resolved in friendly manner.</p>
+			<h4><strong>We appreciate your positive eBay feedback.</strong></h4>
+			<h4><strong>If you are satisfied, please leave positive feedback for us.</strong></h4>
+		</section>
+	</div>
+	<div class="bgr-top"></div>
+</main>
+
+<hr>
+<!--CSG INDICATOR START-->
+<!-- AUCTIVA Scrolling Gallery (do not remove or modify the "CSG INDICATOR START/END" tags or contents) --><link id="csgCss" rel="stylesheet" href="https://scrollinggallery.auctiva.com/gallery/css/1/AUCTIVA/840330/0/25/_271"><div id="csgGallery" style="display: none"><input id="csgScrollingCheckbox_271" type="checkbox" checked /><input id="csgSingleRowCheckbox_271" type="checkbox" checked /><div id="csgGalleryPos"><div id="csgGalleryContainer"><div id="csgHeader" class="csgFrame"><div id="csgHeaderLeft" class="csgLeft"><a id="csgHLStoreLink" href="https://www.auctiva.com/stores/viewstore2.aspx?id=840330" target="_blank"></a><span id="csgHLLogo" class="csgLogo"></span></div><div id="csgHeaderCenter" class="csgCenter"><a id="csgHCStoreLink" href="https://www.auctiva.com/stores/viewstore2.aspx?id=840330" target="_blank"></a><span id="csgHCLogo" class="csgLogo"></span></div><div id="csgHeaderRight" class="csgRight"><label id="csgHRScrollingLabel" for="csgScrollingCheckbox_271"></label><label id="csgHRSingleRowLabel" for="csgSingleRowCheckbox_271"></label><span id="csgHRLogo" class="csgLogo"></span></div></div><div id="csgOuterNavWrapper"><input id="csgPrev1_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev2_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev3_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev4_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev5_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev6_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev7_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev8_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev9_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev10_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev11_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev12_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev13_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev14_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev15_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev16_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev17_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev18_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev19_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgPrev20_271" name="csgRadio" class="csgPrevCheck" type="radio"/><input id="csgNext1_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext2_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext3_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext4_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext5_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext6_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext7_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext8_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext9_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext10_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext11_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext12_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext13_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext14_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext15_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext16_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext17_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext18_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext19_271" name="csgRadio" class="csgNextCheck" type="radio"/><input id="csgNext20_271" name="csgRadio" class="csgNextCheck" type="radio"/><div id="csgNavLeft" class="csgNavLabels"><div id="csgNavLeftWrapper" class="csgNavWrapper"><label id="csgPrevLabel1" class="csgNavLabel" for="csgPrev1_271"></label><label id="csgPrevLabel2" class="csgNavLabel" for="csgPrev2_271"></label><label id="csgPrevLabel3" class="csgNavLabel" for="csgPrev3_271"></label><label id="csgPrevLabel4" class="csgNavLabel" for="csgPrev4_271"></label><label id="csgPrevLabel5" class="csgNavLabel" for="csgPrev5_271"></label><label id="csgPrevLabel6" class="csgNavLabel" for="csgPrev6_271"></label><label id="csgPrevLabel7" class="csgNavLabel" for="csgPrev7_271"></label><label id="csgPrevLabel8" class="csgNavLabel" for="csgPrev8_271"></label><label id="csgPrevLabel9" class="csgNavLabel" for="csgPrev9_271"></label><label id="csgPrevLabel10" class="csgNavLabel" for="csgPrev10_271"></label><label id="csgPrevLabel11" class="csgNavLabel" for="csgPrev11_271"></label><label id="csgPrevLabel12" class="csgNavLabel" for="csgPrev12_271"></label><label id="csgPrevLabel13" class="csgNavLabel" for="csgPrev13_271"></label><label id="csgPrevLabel14" class="csgNavLabel" for="csgPrev14_271"></label><label id="csgPrevLabel15" class="csgNavLabel" for="csgPrev15_271"></label><label id="csgPrevLabel16" class="csgNavLabel" for="csgPrev16_271"></label><label id="csgPrevLabel17" class="csgNavLabel" for="csgPrev17_271"></label><label id="csgPrevLabel18" class="csgNavLabel" for="csgPrev18_271"></label><label id="csgPrevLabel19" class="csgNavLabel" for="csgPrev19_271"></label><label id="csgPrevLabel20" class="csgNavLabel" for="csgPrev20_271"></label></div></div><div id="csgNavRight" class="csgNavLabels"><div id="csgNavRightWrapper" class="csgNavWrapper"><label id="csgNextLabel1" class="csgNavLabel" for="csgNext1_271"></label><label id="csgNextLabel2" class="csgNavLabel" for="csgNext2_271"></label><label id="csgNextLabel3" class="csgNavLabel" for="csgNext3_271"></label><label id="csgNextLabel4" class="csgNavLabel" for="csgNext4_271"></label><label id="csgNextLabel5" class="csgNavLabel" for="csgNext5_271"></label><label id="csgNextLabel6" class="csgNavLabel" for="csgNext6_271"></label><label id="csgNextLabel7" class="csgNavLabel" for="csgNext7_271"></label><label id="csgNextLabel8" class="csgNavLabel" for="csgNext8_271"></label><label id="csgNextLabel9" class="csgNavLabel" for="csgNext9_271"></label><label id="csgNextLabel10" class="csgNavLabel" for="csgNext10_271"></label><label id="csgNextLabel11" class="csgNavLabel" for="csgNext11_271"></label><label id="csgNextLabel12" class="csgNavLabel" for="csgNext12_271"></label><label id="csgNextLabel13" class="csgNavLabel" for="csgNext13_271"></label><label id="csgNextLabel14" class="csgNavLabel" for="csgNext14_271"></label><label id="csgNextLabel15" class="csgNavLabel" for="csgNext15_271"></label><label id="csgNextLabel16" class="csgNavLabel" for="csgNext16_271"></label><label id="csgNextLabel17" class="csgNavLabel" for="csgNext17_271"></label><label id="csgNextLabel18" class="csgNavLabel" for="csgNext18_271"></label><label id="csgNextLabel19" class="csgNavLabel" for="csgNext19_271"></label><label id="csgNextLabel20" class="csgNavLabel" for="csgNext20_271"></label></div></div><div id="csgSlidesContainer"><div id="csgSlidesOuter"><a id="csgOverrideLink" href="https://www.auctiva.com/stores/viewstore2.aspx?id=840330" target="_blank"></a><div id="csgSlides"><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/1" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/2" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/3" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/4" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/5" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/6" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/7" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/8" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/9" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/10" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/11" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/12" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/13" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/14" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/15" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/16" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/17" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/18" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/19" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/20" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/21" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/22" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/23" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/24" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div><div class="csgSlide"><div class="csgListing"><a href="https://scrollinggallery.auctiva.com/gallery/redirect/AUCTIVA/840330/0/25" target="_blank"><div class="csgListingImage"></div><div class="csgTitle"></div><div class="csgDetails"><span class="csgPrice"></span><br><span class="csgEndTime"></span></div></a></div></div></div></div></div></div><div id="csgFooter" class="csgFrame"><div id="csgFooterLeft" class="csgLeft"><label id="csgFLScrollingLabel" for="csgScrollingCheckbox_271"></label><label id="csgFLSingleRowLabel" for="csgSingleRowCheckbox_271"></label><span id="csgFLLogo" class="csgLogo"></span></div><div id="csgFooterCenter" class="csgCenter"><label id="csgFCScrollingLabel" for="csgScrollingCheckbox_271"></label><a id="csgFCStoreLink" href="https://www.auctiva.com/stores/viewstore2.aspx?id=840330" target="_blank"></a><span id="csgFCLogo" class="csgLogo"></span></div><div id="csgFooterRight" class="csgRight"><label id="csgFRScrollingLabel" for="csgScrollingCheckbox_271"></label><label id="csgFRSingleRowLabel" for="csgSingleRowCheckbox_271"></label><span id="csgFRLogo" class="csgLogo"></span></div></div></div><div id="csgPlatformLinkDiv"><span id="csgPlatformLeftImg"></span><a href="https://www.auctiva.com?how=sgLink" target="_blank"><span id="csgPlatformText1"></span><br><span id="csgPlatformText2"></span></a><span id="csgPlatformRightImg"></span></div></div></div>
+<!--CSG INDICATOR END-->
+
+</p>
