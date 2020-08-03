@@ -55,22 +55,6 @@ def next_tag_after_tag(current_tag, next_tag_name="label", tag_str=""):
     return current_tag
 
 
-def insert_tags_after_divdiv_to_section(tag):
-    current_tag = tag.nextSibling
-    while not (
-        current_tag.name == "div"
-        and current_tag.attrs == {}
-        and len(current_tag.contents) == 0
-    ):
-        next_tag = current_tag.nextSibling
-        extract_tag = current_tag.extract()
-        tag.append(extract_tag)
-        if next_tag is None:
-            break
-        else:
-            current_tag = next_tag
-
-
 class ImageDownloader:
     def __init__(
         self,
@@ -205,7 +189,8 @@ class ImageDownloader:
         tag = self.soup.new_tag(name)
         if attrs:
             tag.attrs = attrs
-        tag.string = txt
+        if txt != "":
+            tag.string = txt
         el.append(tag)
         return tag
 
@@ -371,7 +356,26 @@ class ImageDownloader:
                 if tag_h2 is not None:
                     tag_div.name = "section"
                     tag_div.attrs = {"id": "content2"}
-                    insert_tags_after_divdiv_to_section(tag_div)
+                    self.insert_tags_after_divdiv_to_section(tag_div)
+
+    def insert_tags_after_divdiv_to_section(self, tag):
+        current_tag = tag.nextSibling
+        tag_div = self.create_tag(
+            el=tag, name="div", txt="", attrs={"class": "block-title"}
+        )
+        tag.append(tag_div)
+        while not (
+            current_tag.name == "div"
+            and current_tag.attrs == {}
+            and len(current_tag.contents) == 0
+        ):
+            next_tag = current_tag.nextSibling
+            extract_tag = current_tag.extract()
+            tag.append(extract_tag)
+            if next_tag is None:
+                break
+            else:
+                current_tag = next_tag
 
     def div_our_store_section(self):
         self.div_to_section(name_section="Our Store")
