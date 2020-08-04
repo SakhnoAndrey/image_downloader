@@ -112,6 +112,8 @@ class ImageDownloader:
                 self.replace_div_display_flex()  # Task #14-15 and 17
                 self.div_our_store_section()  # Task #16
                 self.div_payment_policy_section()  # Task #18
+                self.div_shipping_policy()  # Task #18
+                self.div_return_policy()  # Task #18
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
                 # self.parse_and_download_images_bs4() # STAGES #1
@@ -399,6 +401,14 @@ class ImageDownloader:
                     tag_strong.string = (
                         "For PayPal payments please go to www.PayPal.com"
                     )
+
+    # Task #18. Replace shipping policy
+    def div_shipping_policy(self):
+        self.div_to_section(name_section="Shipping Policy", num_section="4")
+
+    # Task #18. Replace return policy
+    def div_return_policy(self):
+        self.div_to_section(name_section="Return Policy", num_section="5")
 
 
 # Initializing custom values for parsing
