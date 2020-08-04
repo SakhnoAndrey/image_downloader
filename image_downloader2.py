@@ -2,7 +2,8 @@ import os
 import re
 import requests
 from urllib.parse import urlparse
-from bs4 import BeautifulSoup, Tag, NavigableString
+from bs4 import BeautifulSoup
+from bs4.formatter import HTMLFormatter
 import lxml
 
 
@@ -53,6 +54,14 @@ def next_tag_after_tag(current_tag, next_tag_name="label", tag_str=""):
                 else:
                     need_to_next = False
     return current_tag
+
+
+# Beautiful Soup sorts the attributes. To turn this off, you can subclass the Formatter.attributes() method, which
+# controls which attributes are output and in what order.
+class UnsortedAttributes(HTMLFormatter):
+    def attributes(self, tag):
+        for k, v in tag.attrs.items():
+            yield k, v
 
 
 class ImageDownloader:
@@ -115,11 +124,12 @@ class ImageDownloader:
                 self.div_shipping_policy()  # Task #18
                 self.div_return_policy()  # Task #18
                 self.div_feedback_policy()  # Task #18
+                self.last_div_in_main()  # Task #18
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
                 # self.parse_and_download_images_bs4() # STAGES #1
                 # Save content from BeautefulSoup
-                self.content = self.soup.prettify(formatter="html")
+                self.content = self.soup.prettify(formatter=UnsortedAttributes())
                 # Saving and closing source and goal html files
                 goal_file.write(self.content)
                 source_file.close()
@@ -414,6 +424,12 @@ class ImageDownloader:
     # Task #18. Replace feedback policy
     def div_feedback_policy(self):
         self.div_to_section(name_section="Feedback Policy", num_section="6")
+
+    # Task #18. Last div in main tag
+    def last_div_in_main(self):
+        for main_tag in self.soup.find_all(name="main"):
+            print(main_tag)
+        pass
 
 
 # Initializing custom values for parsing
