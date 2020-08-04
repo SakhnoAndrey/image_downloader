@@ -111,6 +111,7 @@ class ImageDownloader:
                 self.replace_checkbox_label_img()  # Task #13
                 self.replace_div_display_flex()  # Task #14-15 and 17
                 self.div_our_store_section()  # Task #16
+                self.div_payment_policy_section()  # Task #18
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
                 # self.parse_and_download_images_bs4() # STAGES #1
@@ -348,7 +349,7 @@ class ImageDownloader:
                     tag_div.attrs = {"class": "link-gallery"}
 
     # Task #16. Div-Div Our Store to Section
-    def div_to_section(self, name_section="Our Store"):
+    def div_to_section(self, name_section="Our Store", num_section="2"):
         for tag_div in self.soup.find_all("div", text="", attrs={}, recursive=True):
             if tag_div.attrs == {} and len(tag_div.contents) == 0:
                 tag_h2 = next_tag_after_tag(
@@ -356,7 +357,7 @@ class ImageDownloader:
                 )
                 if tag_h2 is not None:
                     tag_div.name = "section"
-                    tag_div.attrs = {"id": "content2"}
+                    tag_div.attrs = {"id": "content" + num_section}
                     self.insert_tags_after_divdiv_to_section(tag_div)
 
     def insert_tags_after_divdiv_to_section(self, tag):
@@ -379,7 +380,7 @@ class ImageDownloader:
                 current_tag = next_tag
 
     def div_our_store_section(self):
-        self.div_to_section(name_section="Our Store")
+        self.div_to_section(name_section="Our Store", num_section="2")
 
     # Task #17. Replace class link-store
     def replace_div_class_link_store(self, tag_div_flex):
@@ -387,6 +388,17 @@ class ImageDownloader:
             for _ in tag_div.find_all(name="p", recursive=False):
                 _ = self.id
                 tag_div.attrs = {"class": "link-store"}
+
+    # Task #18. Replace payment policy
+    def div_payment_policy_section(self):
+        self.div_to_section(name_section="Payment Policy", num_section="3")
+        for tag_section in self.soup.find_all(name="section", attrs={"id": "content3"}):
+            for tag_strong in tag_section.find_all(name="strong"):
+                if "For PayPal payments please go to" in tag_strong.string:
+                    # new_tag = self.soup.new_tag("strong")
+                    tag_strong.string = (
+                        "For PayPal payments please go to www.PayPal.com"
+                    )
 
 
 # Initializing custom values for parsing
