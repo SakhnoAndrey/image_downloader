@@ -114,6 +114,7 @@ class ImageDownloader:
                 self.div_payment_policy_section()  # Task #18
                 self.div_shipping_policy()  # Task #18
                 self.div_return_policy()  # Task #18
+                self.div_feedback_policy()  # Task #18
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
                 # self.parse_and_download_images_bs4() # STAGES #1
@@ -409,6 +410,10 @@ class ImageDownloader:
     # Task #18. Replace return policy
     def div_return_policy(self):
         self.div_to_section(name_section="Return Policy", num_section="5")
+
+    # Task #18. Replace feedback policy
+    def div_feedback_policy(self):
+        self.div_to_section(name_section="Feedback Policy", num_section="6")
 
 
 # Initializing custom values for parsing
