@@ -5,7 +5,8 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 from bs4.formatter import HTMLFormatter
 from chardet.universaldetector import UniversalDetector
-import lxml
+
+# import lxml
 
 
 # Create missing downloaded images and goal folders
@@ -123,9 +124,9 @@ class ImageDownloader:
                     self.content, "html.parser"
                 )  # html.parser or lxml
                 # STAGES #0
-                # self.background_img_to_result() # Task #1
-                # self.shipping_policy()  # Task #2
-                # self.feedback_policy()  # Task #3
+                self.background_img_to_result()  # Task #1
+                self.shipping_policy()  # Task #2
+                self.feedback_policy()  # Task #3
                 self.replace_div_t_switch()  # Task #6
                 self.replace_div_p_switch_1()  # Task #7-8
                 self.replace_div_p_switch_2()  # Task #9-10
@@ -138,8 +139,11 @@ class ImageDownloader:
                 self.div_return_policy()  # Task #18
                 self.div_feedback_policy()  # Task #18
                 self.last_div_in_main()  # Task #18
+                self.first_div_in_main()  # Task #19
+                self.insert_tag_style()  # Task #20
                 # STAGES #1
                 # Parse and download images with using BeautefulSoup
+                # self.parse_and_download_images_by_regex()  # STAGES #1
                 # self.parse_and_download_images_bs4() # STAGES #1
                 # Save content from BeautefulSoup
                 self.content = self.soup.prettify(formatter=UnsortedAttributes())
@@ -224,69 +228,74 @@ class ImageDownloader:
     # Task #2. Shipping policy
     def shipping_policy(self):
         elem = self.soup.find(name="section", attrs={"id": "content4"})
-        elem.p.decompose()
-        tag = self.create_tag(
-            elem,
-            "p",
-            "We make every effort to process your orders quickly. Our standard "
-            "shipping method is ",
-        )
-        self.create_tag(
-            tag,
-            "strong",
-            "Registered Airmail requiring recipient’s signature " "upon the delivery.",
-        )
-        tag = self.create_tag(elem, "p", "All orders are usually dispatched within ")
-        self.create_tag(tag, "strong", "1-2 business days.")
-        tag = self.create_tag(
-            elem,
-            "p",
-            "Once your order has been dispatched, an estimated delivery time "
-            "will be subject to the delivery service but depending on location "
-            "it is about ",
-        )
-        self.create_tag(tag, "strong", "14-20 business days.")
-        self.create_tag(
-            elem,
-            "p",
-            "Delivery times are estimates and commence from the date of shipping, rather "
-            "than the date of order. Please note that the delivery of international orders "
-            "may take longer than expected due to customs or other issues.",
-        )
-        self.create_tag(
-            elem,
-            "p",
-            "Our shipping method comes with tracking and your tracking number will be "
-            "provided once your order has been posted.",
-        )
-        tag = self.create_tag(
-            elem,
-            "p",
-            "If you have any questions about the delivery and shipment or "
-            "your order, please contact us at any time via ",
-        )
-        tag_p = tag
-        tag = self.create_tag(tag, "strong", "")
-        self.create_tag(
-            tag,
-            "a",
-            "eBay contact form",
-            {
-                "target": "_blank",
-                "href": "https://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&requested=lyapko_applicators",
-            },
-        )
-        tag_p.append(".")
+        if elem:
+            elem.p.decompose()
+            tag = self.create_tag(
+                elem,
+                "p",
+                "We make every effort to process your orders quickly. Our standard "
+                "shipping method is ",
+            )
+            self.create_tag(
+                tag,
+                "strong",
+                "Registered Airmail requiring recipient’s signature "
+                "upon the delivery.",
+            )
+            tag = self.create_tag(
+                elem, "p", "All orders are usually dispatched within "
+            )
+            self.create_tag(tag, "strong", "1-2 business days.")
+            tag = self.create_tag(
+                elem,
+                "p",
+                "Once your order has been dispatched, an estimated delivery time "
+                "will be subject to the delivery service but depending on location "
+                "it is about ",
+            )
+            self.create_tag(tag, "strong", "14-20 business days.")
+            self.create_tag(
+                elem,
+                "p",
+                "Delivery times are estimates and commence from the date of shipping, rather "
+                "than the date of order. Please note that the delivery of international orders "
+                "may take longer than expected due to customs or other issues.",
+            )
+            self.create_tag(
+                elem,
+                "p",
+                "Our shipping method comes with tracking and your tracking number will be "
+                "provided once your order has been posted.",
+            )
+            tag = self.create_tag(
+                elem,
+                "p",
+                "If you have any questions about the delivery and shipment or "
+                "your order, please contact us at any time via ",
+            )
+            tag_p = tag
+            tag = self.create_tag(tag, "strong", "")
+            self.create_tag(
+                tag,
+                "a",
+                "eBay contact form",
+                {
+                    "target": "_blank",
+                    "href": "https://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&requested=lyapko_applicators",
+                },
+            )
+            tag_p.append(".")
 
     # Task #3. Feedback policy
     def feedback_policy(self):
         elem = self.soup.find(name="section", attrs={"id": "content6"})
-        for el in elem.find_all("p"):
-            if "NEGATIVE FEEDBACK" in el.string:
-                el.string = (
-                    "Please e-mail us before leaving negative feedback, or open any dispute on eBay. "
-                    "We will do our best to solve the issue for you."
-                )
+        if elem:
+            for el in elem.find_all("p"):
+                if "NEGATIVE FEEDBACK" in el.string:
+                    el.string = (
+                        "Please e-mail us before leaving negative feedback, or open any dispute on eBay. "
+                        "We will do our best to solve the issue for you."
+                    )
 
     # Task #4. Change http to https
     def change_http_https(self):
@@ -443,9 +452,33 @@ class ImageDownloader:
 
     # Task #18. Last div in main tag
     def last_div_in_main(self):
-        for main_tag in self.soup.find_all(name="main"):
-            print(main_tag)
-        pass
+        tag_html = self.soup.find(name="html")
+        if tag_html:
+            tag_html.unwrap()
+        tag_main = self.soup.find(name="body")
+        if tag_main:
+            tag_main.name = "main"
+            tags_div = tag_main.find_all("div", text="", attrs={}, recursive=False)
+            tags_div[len(tags_div) - 1].attrs = {"class": "bgr-top"}
+
+    # Task #19. First div in main tag
+    def first_div_in_main(self):
+        tag_main = self.soup.find(name="main")
+        if tag_main:
+            tags_div = tag_main.find_all("div", text="", attrs={}, recursive=False)
+            tags_div[0].attrs = {"class": "bgr-top"}
+            tags_div[1].attrs = {"id": "wrapper"}
+
+    # Task #20. Add to the beginning of the file
+    def insert_tag_style(self):
+        style_file = open(os.path.join("templates", "style.html"), "r")
+        style_content = style_file.read()
+        new_style_bs = BeautifulSoup(
+            style_content, "html.parser"
+        )  # html.parser or lxml
+        old_style = self.soup.find(name="style")
+        if old_style:
+            old_style.replace_with(new_style_bs)
 
 
 # Initializing custom values for parsing
