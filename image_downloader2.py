@@ -143,7 +143,7 @@ class ImageDownloader:
                 self.insert_tag_style()  # Task #20
                 # STAGES #1
                 # Parse and download images with using BeautifulSoup
-                # self.parse_and_download_images_by_regex()  # STAGES #1
+                self.parse_and_download_images_by_regex()  # STAGES #1
                 # self.parse_and_download_images_bs4() # STAGES #1
                 # Save content from BeautifulSoup
                 self.content = self.soup.prettify(formatter=UnsortedAttributes())
