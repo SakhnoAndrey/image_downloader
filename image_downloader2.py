@@ -4,6 +4,7 @@ import requests
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 from bs4.formatter import HTMLFormatter
+from chardet.universaldetector import UniversalDetector
 import lxml
 
 
@@ -99,8 +100,20 @@ class ImageDownloader:
         for name in os.listdir(self.source_folder):
             if os.path.isfile(os.path.abspath(os.path.join(self.source_folder, name))):
                 # Opening / creating source and goal html files
-                source_file = open(os.path.join(self.source_folder, name), "r")
                 goal_file = open(os.path.join(self.goal_folder, name), "w")
+                coding_detector = UniversalDetector()
+                with open(os.path.join(self.source_folder, name), "rb") as source_file:
+                    for line in source_file:
+                        coding_detector.feed(line)
+                        if coding_detector.done:
+                            break
+                    coding_detector.close()
+                # print(coding_detector.result["encoding"])  # to delete
+                source_file = open(
+                    os.path.join(self.source_folder, name),
+                    "r",
+                    encoding=coding_detector.result["encoding"],
+                )
                 # Reading source html file
                 self.content = source_file.read()
                 # Change in html file before download images
@@ -335,13 +348,14 @@ class ImageDownloader:
     def replace_checkbox_label_img(self):
         for tag_input in self.soup.find_all(name="input", attrs={"type": "checkbox"}):
             tag_label = next_tag_after_tag(tag_input)
-            tag_img_in_label = tag_label.find(name="img")
-            if tag_img_in_label:
-                if tag_img_in_label["src"]:
-                    name_pic = "pic-" + str(self.pic)
-                    tag_input.attrs = {"type": "checkbox", "id": name_pic}
-                    tag_label.attrs = {"for": name_pic, "class": "lightbox"}
-                    self.pic += 1
+            if tag_label:
+                tag_img_in_label = tag_label.find(name="img")
+                if tag_img_in_label:
+                    if tag_img_in_label["src"]:
+                        name_pic = "pic-" + str(self.pic)
+                        tag_input.attrs = {"type": "checkbox", "id": name_pic}
+                        tag_label.attrs = {"for": name_pic, "class": "lightbox"}
+                        self.pic += 1
 
     # Task #14. Replace display-flex
     def replace_div_display_flex(self):
@@ -407,8 +421,10 @@ class ImageDownloader:
         self.div_to_section(name_section="Payment Policy", num_section="3")
         for tag_section in self.soup.find_all(name="section", attrs={"id": "content3"}):
             for tag_strong in tag_section.find_all(name="strong"):
-                if "For PayPal payments please go to" in tag_strong.string:
-                    # new_tag = self.soup.new_tag("strong")
+                if (
+                    tag_strong.contents[0].find("For PayPal payments please go to")
+                    != -1
+                ):
                     tag_strong.string = (
                         "For PayPal payments please go to www.PayPal.com"
                     )
