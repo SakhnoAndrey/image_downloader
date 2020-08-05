@@ -119,7 +119,7 @@ class ImageDownloader:
                 self.content = source_file.read()
                 # Change in html file before download images
                 self.change_http_https()  # Task #4
-                # Create BeautefulSoup object
+                # Create BeautifulSoup object
                 self.soup = BeautifulSoup(
                     self.content, "html.parser"
                 )  # html.parser or lxml
@@ -142,10 +142,10 @@ class ImageDownloader:
                 self.first_div_in_main()  # Task #19
                 self.insert_tag_style()  # Task #20
                 # STAGES #1
-                # Parse and download images with using BeautefulSoup
+                # Parse and download images with using BeautifulSoup
                 # self.parse_and_download_images_by_regex()  # STAGES #1
                 # self.parse_and_download_images_bs4() # STAGES #1
-                # Save content from BeautefulSoup
+                # Save content from BeautifulSoup
                 self.content = self.soup.prettify(formatter=UnsortedAttributes())
                 # Saving and closing source and goal html files
                 goal_file.write(self.content)
