@@ -74,6 +74,7 @@ class ImageDownloader:
         image_folder,
         new_site_name,
         old_site_name="img.auctiva.com",
+        type_parser="html.parser",
         list_ext=None,
     ):
         # Activating class variables
@@ -82,6 +83,7 @@ class ImageDownloader:
         self.image_folder = image_folder
         self.new_site_name = new_site_name
         self.old_site_name = old_site_name
+        self.type_parser = type_parser
         self.id = 1
         self.p_id = 1
         self.pic = 1
@@ -118,10 +120,10 @@ class ImageDownloader:
                 # Reading source html file
                 self.content = source_file.read()
                 # Change in html file before download images
-                self.change_http_https()  # Task #4
+                # self.change_http_https()  # Task #4
                 # Create BeautifulSoup object
                 self.soup = BeautifulSoup(
-                    self.content, "html.parser"
+                    self.content, self.type_parser,
                 )  # html.parser or lxml
                 # STAGES #0
                 self.background_img_to_result()  # Task #1
@@ -141,12 +143,16 @@ class ImageDownloader:
                 self.last_div_in_main()  # Task #18
                 self.first_div_in_main()  # Task #19
                 self.insert_tag_style()  # Task #20
-                # STAGES #1
+                self.remove_tags_html_and_head()  # For automatic added tags html and head
+                # STAGES #1 via BeautifulSoup4
                 # Parse and download images with using BeautifulSoup
-                self.parse_and_download_images_by_regex()  # STAGES #1
                 # self.parse_and_download_images_bs4() # STAGES #1
                 # Save content from BeautifulSoup
-                self.content = self.soup.prettify(formatter=UnsortedAttributes())
+                self.content = self.soup.prettify(
+                    formatter="html5"
+                )  # (formatter=UnsortedAttributes())
+                # STAGES #1 via Regex
+                self.parse_and_download_images_by_regex()  # STAGES #1
                 # Saving and closing source and goal html files
                 goal_file.write(self.content)
                 source_file.close()
@@ -441,14 +447,17 @@ class ImageDownloader:
     # Task #18. Replace shipping policy
     def div_shipping_policy(self):
         self.div_to_section(name_section="Shipping Policy", num_section="4")
+        pass
 
     # Task #18. Replace return policy
     def div_return_policy(self):
         self.div_to_section(name_section="Return Policy", num_section="5")
+        pass
 
     # Task #18. Replace feedback policy
     def div_feedback_policy(self):
         self.div_to_section(name_section="Feedback Policy", num_section="6")
+        pass
 
     # Task #18. Last div in main tag
     def last_div_in_main(self):
@@ -459,15 +468,17 @@ class ImageDownloader:
         if tag_main:
             tag_main.name = "main"
             tags_div = tag_main.find_all("div", text="", attrs={}, recursive=False)
-            tags_div[len(tags_div) - 1].attrs = {"class": "bgr-top"}
+            if tags_div:
+                tags_div[len(tags_div) - 1].attrs = {"class": "bgr-top"}
 
     # Task #19. First div in main tag
     def first_div_in_main(self):
         tag_main = self.soup.find(name="main")
         if tag_main:
             tags_div = tag_main.find_all("div", text="", attrs={}, recursive=False)
-            tags_div[0].attrs = {"class": "bgr-top"}
-            tags_div[1].attrs = {"id": "wrapper"}
+            if len(tags_div) > 1:
+                tags_div[0].attrs = {"class": "bgr-top"}
+                tags_div[1].attrs = {"id": "wrapper"}
 
     # Task #20. Add to the beginning of the file
     def insert_tag_style(self):
@@ -480,6 +491,14 @@ class ImageDownloader:
         if old_style:
             old_style.replace_with(new_style_bs)
 
+    def remove_tags_html_and_head(self):
+        tag_html = self.soup.find(name="html")
+        if tag_html:
+            tag_html.unwrap()
+        tag_head = self.soup.find(name="head")
+        if tag_head:
+            tag_head.unwrap()
+
 
 # Initializing custom values for parsing
 image_downloader = ImageDownloader(
@@ -489,4 +508,10 @@ image_downloader = ImageDownloader(
     old_site_name="img.auctiva.com",
     new_site_name="test.com",
     list_ext=["jpg", "jpeg", "gif", "png", "bmp", "svg"],
+    type_parser="lxml",
 )
+
+# type_parser:
+"html.parser"
+"lxml"
+"html5lib"
