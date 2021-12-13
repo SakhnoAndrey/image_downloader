@@ -1,6 +1,6 @@
 black
 requests==2.23.0
 beautifulsoup4==4.9.1
-lxml==4.5.2
+lxml==4.6.5
 html5lib==1.1
 chardet==3.0.4
